@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leadminnow</title>
+    <link rel="icon" href="Images/Main_logo.png" type="image/png" />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#3b82f6", secondary: "#1e3a8a" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+      }
+      input[type="number"] {
+      -moz-appearance: textfield;
+      appearance: textfield;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Header -->
+    <header class="w-full bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center space-x-2">
+                  <img src="Images/Main_logo.png" alt="LM Logo" class="h-10 w-auto" />
+                </a>
+              </div>
+        <nav class="hidden md:flex items-center space-x-8">
+        <div class="relative group">
+        <button class="text-gray-700 hover:text-primary font-medium flex items-center">
+        Services
+        <span class="ml-1 w-5 h-5 flex items-center justify-center">
+        <i class="ri-arrow-down-s-line"></i>
+        </span>
+        </button>
+        <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+        <a href="AI-Chatbot.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">AI Chatbots</a>
+        <a href="Facebook.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Meta Ads</a>
+        <a href="ads_making.html" class="block px-4 py-2 text-sm text-primary font-medium hover:bg-gray-50">Animated Ads</a>
+        <a href="ads_making.html" class="block px-4 py-2 text-sm text-primary font-medium hover:bg-gray-50">UI/UX Design</a>
+        </div>
+        </div>
+        <a href="AboutUs.html" class="text-gray-700 hover:text-primary font-medium">About Us</a>
+        <a href="Contact_us.html" class="text-gray-700 hover:text-primary font-medium">Contact Us</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+        <div class="relative">
+        <button class="flex items-center text-gray-700 hover:text-primary">
+        EN
+        <span class="ml-1 w-5 h-5 flex items-center justify-center">
+        <i class="ri-arrow-down-s-line"></i>
+        </span>
+        </button>
+        <div class="absolute right-0 mt-2 w-24 bg-white shadow-lg rounded hidden">
+        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">EN</a>
+        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">FR</a>
+        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">DE</a>
+        </div>
+        </div>
+        <button class="bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap hover:bg-blue-600 transition-colors">Get Started</button>
+        </div>
+        </div>
+        </header>
+            <!-- Breadcrumb -->
+    <div class="bg-gray-100 py-3">
+        <div class="container mx-auto px-4">
+          <div class="flex items-center text-sm text-gray-600">
+            <a
+              href="index.html"
+              data-readdy="true"
+              class="hover:text-primary transition-colors"
+              >Home</a
+            >
+           
+            <div class="w-4 h-4 flex items-center justify-center mx-1">
+              <i class="ri-arrow-right-s-line"></i>
+            </div>
+            <span class="text-primary">Contact Us</span>
+          </div>
+        </div>
+      </div>
+        
+    <!-- Hero Section -->
+    <section class="relative w-full bg-gray-50 overflow-hidden">
+      <div
+        style="background-image: url('Images/Ls1.png'); background-size: cover; background-position: center;"
+        class="w-full h-[400px] relative"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-gray-900/30"
+        ></div>
+        <div
+          class="container mx-auto px-6 relative z-10 h-full flex flex-col justify-center"
+        >
+          <div class="max-w-2xl">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+              Get in Touch
+            </h1>
+            <p class="text-xl text-white/90 mb-8">
+              We're here to answer your questions and help your business thrive
+              with our innovative digital solutions.
+            </p>
+            <a
+              href="https://forms.gle/ppgFenWFkdwes1M88"
+              target="_blank"
+              rel="noopener"
+              class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 whitespace-nowrap inline-block"
+            >
+              Contact Us Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Information Grid -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            How Can We Help You?
+          </h2>
+          <p class="text-lg text-gray-600">
+            Reach out to us through any of these channels and we'll get back to
+            you promptly.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-8 rounded shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6"
+            >
+              <i class="ri-customer-service-2-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              General Inquiries
+            </h3>
+            <p class="text-gray-600 mb-4">
+              For general questions about our services and solutions.
+            </p>
+            <div class="flex items-center mb-3">
+              <div
+                class="w-5 h-5 flex items-center justify-center mr-3 text-primary"
+              >
+                <i class="ri-mail-line"></i>
+              </div>
+              <span class="text-gray-700">aaditya@leadminnow.com</span>
+            </div>
+            <div class="flex items-center mb-3">
+              <div
+                class="w-5 h-5 flex items-center justify-center mr-3 text-primary"
+              >
+                
+              </div>
+              <span class="text-gray-700">OR </br>
+                                        Fill the form below</span>
+            </div>
+            <div class="flex items-center">
+              <div
+                class="w-5 h-5 flex items-center justify-center mr-3 text-primary"
+              >
+                <i class="ri-time-line"></i>
+              </div>
+              <span class="text-gray-700">Response time: Within 24-48 hours</span>
+            </div>
+          </div>
+          <div
+            class="bg-white p-8 rounded shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6"
+            >
+              <i class="ri-briefcase-4-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Business Development
+            </h3>
+            <p class="text-gray-600 mb-4">
+              For partnership opportunities and enterprise solutions.
+            </p>
+            <div class="flex items-center mb-3">
+              <div
+                class="w-5 h-5 flex items-center justify-center mr-3 text-primary"
+              >
+                <i class="ri-mail-line"></i>
+              </div>
+              <span class="text-gray-700">aaditya@leadminnow.com</span>
+            </div>
+            <div class="flex items-center mb-3">
+              <div
+                class="w-5 h-5 flex items-center justify-center mr-3 text-primary"
+              >
+                <i class="ri-whatsapp-line"></i>
+              </div>
+              <span class="text-gray-700">+91 80852 47210</span>
+            </div>
+            <div class="flex items-center">
+              <div
+                class="w-5 h-5 flex items-center justify-center mr-3 text-primary"
+              >
+                <i class="ri-time-line"></i>
+              </div>
+              <span class="text-gray-700">Response time: Within 24-48 hours</span>
+            </div>
+          </div>
+          <div
+            class="bg-white p-8 rounded shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6"
+            >
+              <i class="ri-customer-service-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Technical Support
+            </h3>
+            <p class="text-gray-600 mb-4">
+              For existing clients needing assistance with our solutions.
+            </p>
+            <div class="flex items-center mb-3">
+              <div
+                class="w-5 h-5 flex items-center justify-center mr-3 text-primary"
+              >
+                <i class="ri-mail-line"></i>
+              </div>
+              <span class="text-gray-700">aaditya@leadminnow.com</span>
+            </div>
+            <div class="flex items-center mb-3">
+              <div
+                class="w-5 h-5 flex items-center justify-center mr-3 text-primary"
+              >
+                <i class="ri-whatsapp-line"></i>
+              </div>
+              <span class="text-gray-700">+91 80852 47210</span>
+            </div>
+            <div class="flex items-center">
+              <div
+                class="w-5 h-5 flex items-center justify-center mr-3 text-primary"
+              >
+                <i class="ri-time-line"></i>
+              </div>
+              <span class="text-gray-700">Response time: Within 12-24 hours</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Form Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto">
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Get Started</h3>
+            <div class="text-center">
+              <a
+                href="https://forms.gle/ppgFenWFkdwes1M88"
+                target="_blank"
+                rel="noopener"
+                class="inline-block bg-primary text-white px-8 py-4 !rounded-button text-lg font-medium hover:bg-primary/90 transition-colors"
+              >
+                Submit Info
+              </a>
+              <p class="mt-4 text-gray-600">Click above to fill out our quick information form and we'll get back to you shortly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-lg text-gray-600">
+            Find answers to common questions about working with us.
+          </p>
+        </div>
+        <div class="max-w-3xl mx-auto">
+          <!-- FAQ Item 1 -->
+          <div class="mb-6 border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              class="faq-toggle w-full flex items-center justify-between p-6 bg-white hover:bg-gray-50 transition-colors text-left"
+            >
+              <span class="text-lg font-medium text-gray-900"
+                >What is the typical process for starting a project with
+                Leadminnow?</span
+              >
+              <div
+                class="w-6 h-6 flex items-center justify-center text-primary transform transition-transform faq-icon"
+              >
+                <i class="ri-add-line"></i>
+              </div>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 pt-0 bg-white">
+              <p class="text-gray-600">
+                Our process typically begins with an initial consultation to
+                understand your business needs and goals. We then develop a
+                tailored proposal outlining our recommended approach, timeline,
+                and budget. Once approved, we assign a dedicated project manager
+                who will guide you through the implementation process, from
+                strategy development to execution and ongoing optimization.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 2 -->
+          <div class="mb-6 border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              class="faq-toggle w-full flex items-center justify-between p-6 bg-white hover:bg-gray-50 transition-colors text-left"
+            >
+              <span class="text-lg font-medium text-gray-900"
+                >How long does it typically take to see results from your
+                services?</span
+              >
+              <div
+                class="w-6 h-6 flex items-center justify-center text-primary transform transition-transform faq-icon"
+              >
+                <i class="ri-add-line"></i>
+              </div>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 pt-0 bg-white">
+              <p class="text-gray-600">
+                Results timeline varies depending on the service and your
+                specific goals. For digital marketing campaigns, you may see
+                initial results within 2-4 weeks, with more significant
+                improvements over 3-6 months as we optimize based on data. For
+                website design or app development projects, the timeline from
+                concept to launch typically ranges from 6-12 weeks, depending on
+                complexity. We provide regular progress updates and performance
+                reports throughout our engagement.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 3 -->
+          <div class="mb-6 border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              class="faq-toggle w-full flex items-center justify-between p-6 bg-white hover:bg-gray-50 transition-colors text-left"
+            >
+              <span class="text-lg font-medium text-gray-900"
+                >What are your payment terms and methods?</span
+              >
+              <div
+                class="w-6 h-6 flex items-center justify-center text-primary transform transition-transform faq-icon"
+              >
+                <i class="ri-add-line"></i>
+              </div>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 pt-0 bg-white">
+              <p class="text-gray-600">
+                We offer flexible payment options tailored to your project type.
+                For ongoing services, we typically work on a monthly retainer
+                basis with an initial 3-6 month commitment. For project-based
+                work, we require a 50% deposit to begin, with the remaining
+                balance due upon completion. We accept payments via credit card,
+                bank transfer, and major payment platforms. All payment terms
+                are clearly outlined in our service agreement.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 4 -->
+          <div class="mb-6 border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              class="faq-toggle w-full flex items-center justify-between p-6 bg-white hover:bg-gray-50 transition-colors text-left"
+            >
+              <span class="text-lg font-medium text-gray-900"
+                >How do you handle client communication during projects?</span
+              >
+              <div
+                class="w-6 h-6 flex items-center justify-center text-primary transform transition-transform faq-icon"
+              >
+                <i class="ri-add-line"></i>
+              </div>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 pt-0 bg-white">
+              <p class="text-gray-600">
+                We believe in transparent, consistent communication. Each client
+                is assigned a dedicated account manager who serves as your main
+                point of contact. We establish regular check-in meetings (weekly
+                or bi-weekly) and provide access to our project management
+                platform where you can track progress in real-time. For urgent
+                matters, we're available via phone, email, or instant messaging
+                during business hours, with emergency support available for
+                critical situations.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 5 -->
+          <div class="mb-6 border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              class="faq-toggle w-full flex items-center justify-between p-6 bg-white hover:bg-gray-50 transition-colors text-left"
+            >
+              <span class="text-lg font-medium text-gray-900"
+                >Do you offer customized solutions or only pre-packaged
+                services?</span
+              >
+              <div
+                class="w-6 h-6 flex items-center justify-center text-primary transform transition-transform faq-icon"
+              >
+                <i class="ri-add-line"></i>
+              </div>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 pt-0 bg-white">
+              <p class="text-gray-600">
+                We specialize in creating customized solutions tailored to each
+                client's unique needs and goals. While we have established
+                frameworks and methodologies that guide our approach, we don't
+                believe in one-size-fits-all packages. During our discovery
+                process, we thoroughly analyze your business challenges, target
+                audience, and competitive landscape to develop strategies
+                specifically designed to address your objectives and deliver
+                measurable results.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Alternative Contact Channels -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            More Ways to Connect
+          </h2>
+          <p class="text-lg text-gray-600">
+            Choose the Date and Time that works best for you.
+          </p>
+        </div>
+        <!-- Calendly inline widget begin -->
+        <div
+          class="calendly-inline-widget"
+          data-url="https://calendly.com/leadminnow"
+          style="min-width:320px;height:700px;"
+        ></div>
+        <script
+          type="text/javascript"
+          src="https://assets.calendly.com/assets/external/widget.js"
+          async
+        ></script>
+        <!-- Calendly inline widget end -->
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+            <div class="lg:col-span-2">
+              <div class="flex items-center">
+                <a href="index.html" class="flex items-center space-x-2">
+                  <img src="Images/Main_logo.png" alt="LM Logo" class="h-10 w-auto" />
+                </a>
+              </div>
+              <p class="text-gray-400 mb-6 max-w-md">
+              </br>
+                Empowering businesses with innovative digital solutions to drive
+                growth, enhance customer engagement, and maximize ROI in today's
+                competitive marketplace.
+              </p>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  title="Facebook"
+                  class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+                >
+                  <i class="ri-facebook-fill"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+                >
+                  <i class="ri-twitter-x-fill"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/aadiverma/"
+                  class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+                >
+                  <i class="ri-linkedin-fill"></i>
+                </a>
+                
+                <a
+                  href="https://www.instagram.com/leadminnow/"
+                  class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+                >
+                  <i class="ri-instagram-fill"></i>
+                </a>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Services</h3>
+              <ul class="space-y-3">
+                <li>
+                  <a
+                    href="Facebook.html"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Digital Marketing</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Facebook.html"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Meta Ads</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="ads_making.html"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Animated Ads</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="AI-Chatbot.html"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >AI Chatbots</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="ads_making.html"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >UI/UX Design</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Company</h3>
+              <ul class="space-y-3">
+                <li>
+                  <a
+                    href="AboutUs.html"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Case Studies</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Testimonials</a
+                
+                <li>
+                  <a
+                    href="Contact_us.html"
+                    class="text-gray-400 hover:text-white transition-colors"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Store Information</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2 mt-0.5"
+                  >
+                    <i class="ri-map-pin-line"></i>
+                  </div>
+                  <span class="text-gray-400"
+                    >123 Demo-1, New York, NY 10001</span
+                  >
+                </li>
+                <li class="flex items-center">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2"
+                  >
+                    <i class="ri-phone-line"></i>
+                  </div>
+                  <span class="text-gray-400">+91 8085247210</span>
+                </li>
+                <li class="flex items-center">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2"
+                  >
+                    <i class="ri-mail-line"></i>
+                  </div>
+                  <span class="text-gray-400">aaditya@leadminnow.com</span>
+                </li>
+                <li class="flex items-center">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2"
+                  >
+                    <i class="ri-time-line"></i>
+                  </div>
+                  <span class="text-gray-400"
+                    >Mon-Fri: 8AM-9PM, Sat: 10AM-4PM</span
+                  >
+                </li>
+              </ul>
+              <div class="mt-6">
+                <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                <div class="flex">
+                  <input
+                    type="email"
+                    placeholder="Your email"
+                    class="w-full px-4 py-2 bg-gray-800 border-none rounded-l text-white text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                  <button
+                    class="bg-primary text-white px-4 py-2 !rounded-r-button whitespace-nowrap font-medium hover:bg-primary/90 transition-colors"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center"
+          >
+            <p class="text-gray-500 text-sm mb-4 md:mb-0">
+              © 2025 LeadMinnow. All rights reserved.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+              <a
+                href="#"
+                class="text-gray-500 text-sm hover:text-white transition-colors"
+                >Privacy Policy</a
+              >
+              <a
+                href="#"
+                class="text-gray-500 text-sm hover:text-white transition-colors"
+                >Terms of Service</a
+              >
+              <a
+                href="#"
+                class="text-gray-500 text-sm hover:text-white transition-colors"
+                >Cookie Policy</a
+              >
+            </div>
+            <div class="flex items-center mt-4 md:mt-0">
+              <span class="text-gray-500 text-sm mr-4">Payment Methods:</span>
+              <div class="flex space-x-3">
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-gray-400"
+                >
+                  <i class="ri-visa-fill ri-lg"></i>
+                </div>
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-gray-400"
+                >
+                  <i class="ri-mastercard-fill ri-lg"></i>
+                </div>
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-gray-400"
+                >
+                  <i class="ri-paypal-fill ri-lg"></i>
+                </div>
+                <div
+                  class="w-8 h-8 flex items-center justify-center text-gray-400"
+                >
+                  <i class="ri-apple-fill ri-lg"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    <!-- Add chatbot scripts -->
+    <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/04/18/15/20250418150249-PM36R8KH.js"></script>
+    <script>
+      // Custom checkbox functionality
+      document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+        checkbox.addEventListener("change", function () {
+          const checkmark = this.nextElementSibling.querySelector("div");
+          if (this.checked) {
+            checkmark.classList.remove("hidden");
+          } else {
+            checkmark.classList.add("hidden");
+          }
+        });
+      });
+      // FAQ accordion functionality
+      document.querySelectorAll(".faq-toggle").forEach((toggle) => {
+        toggle.addEventListener("click", function () {
+          const content = this.nextElementSibling;
+          const icon = this.querySelector(".faq-icon");
+          if (content.classList.contains("hidden")) {
+            content.classList.remove("hidden");
+            icon.innerHTML = '<i class="ri-subtract-line"></i>';
+            icon.classList.add("rotate-180");
+          } else {
+            content.classList.add("hidden");
+            icon.innerHTML = '<i class="ri-add-line"></i>';
+            icon.classList.remove("rotate-180");
+          }
+        });
+      });
+    </script>
+    <!-- Add formHandler.js before closing body tag -->
+    <script src="formHandler.js"></script>
+  </body>
+</html>

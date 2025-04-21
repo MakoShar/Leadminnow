@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leadminnow</title>
+    <link rel="icon" href="Images/Main_logo.png" type="image/png" />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4285F4", secondary: "#34A853" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+          font-family: 'Inter', sans-serif;
+      }
+      .hero-section {
+          background-image: url('https://public.readdy.ai/ai/img_res/bc80d4147a5c374d5b9b309e1bffa2b7.jpg');
+          background-size: cover;
+          background-position: center;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 20px;
+          height: 20px;
+          background: #4285F4;
+          border-radius: 50%;
+          cursor: pointer;
+      }
+      input[type="range"]::-moz-range-thumb {
+          width: 20px;
+          height: 20px;
+          background: #4285F4;
+          border-radius: 50%;
+          cursor: pointer;
+          border: none;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-white">
+    <!-- Header/Navigation -->
+    <header class="w-full bg-white shadow-sm">
+      <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+          <div class="flex items-center">
+              <a href="index.html" class="flex items-center space-x-2">
+                <img src="Images/Main_logo.png" alt="LM Logo" class="h-10 w-auto" />
+              </a>
+            </div>
+      <nav class="hidden md:flex items-center space-x-8">
+      <div class="relative group">
+      <button class="text-gray-700 hover:text-primary font-medium flex items-center">
+      Services
+      <span class="ml-1 w-5 h-5 flex items-center justify-center">
+      <i class="ri-arrow-down-s-line"></i>
+      </span>
+      </button>
+      <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+      <a href="AI-Chatbot.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">AI Chatbots</a>
+      <a href="Facebook.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Meta Ads</a>
+      <a href="ads_making.html" class="block px-4 py-2 text-sm text-primary font-medium hover:bg-gray-50">Animated Ads</a>
+      <a href="ads_making.html" class="block px-4 py-2 text-sm text-primary font-medium hover:bg-gray-50">UI/UX Design</a>
+      </div>
+      </div>
+      <a href="AboutUs.html" class="text-gray-700 hover:text-primary font-medium">About Us</a>
+      <a href="Contact_us.html" class="text-gray-700 hover:text-primary font-medium">Contact Us</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+      <div class="relative">
+      <button class="flex items-center text-gray-700 hover:text-primary">
+      EN
+      <span class="ml-1 w-5 h-5 flex items-center justify-center">
+      <i class="ri-arrow-down-s-line"></i>
+      </span>
+      </button>
+      <div class="absolute right-0 mt-2 w-24 bg-white shadow-lg rounded hidden">
+      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">EN</a>
+      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">FR</a>
+      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">DE</a>
+      </div>
+      </div>
+      <a
+      href="contact_us.html"
+      class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition-colors"
+      >Get Started</a
+    >
+      </div>
+      </div>
+      </header>
+      
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-50 py-3 border-b border-gray-200">
+      <div class="container mx-auto px-6">
+        <div class="flex items-center text-sm text-gray-600">
+          <a href="index.html" class="hover:text-primary">Home</a>
+          <span class="mx-2">/</span>
+          <a
+            href="index.html"
+            data-readdy="true"
+            class="hover:text-primary"
+            >Services</a
+          >
+          <span class="mx-2">/</span>
+          <span class="text-primary font-medium">AI Chatbot Solutions</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section w-full min-h-[600px] relative">
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"
+      ></div>
+      <div class="container mx-auto px-6 py-20 relative z-10">
+        <div class="max-w-2xl">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            AI Chatbot Solutions for Modern Businesses
+          </h1>
+          <p class="text-lg text-gray-700 mb-8">
+            Transform your customer engagement with intelligent conversational
+            AI that provides 24/7 support, automates responses, and delivers
+            personalized experiences at scale.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="Contact_us.html">
+              <button
+                class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap hover:bg-blue-600 transition-colors"
+              >
+                Get Started
+              </button>
+            </a>
+            
+            <a href="Contact_us.html">
+              <button
+                class="bg-white text-gray-800 border border-gray-300 px-8 py-3 !rounded-button whitespace-nowrap hover:bg-gray-50 transition-colors"
+              >
+                Schedule Demo
+              </button>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <div class="lg:w-1/2">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Elevate Your Customer Experience with AI
+            </h2>
+            <p class="text-lg text-gray-600 mb-8">
+              Our AI chatbot solutions leverage cutting-edge natural language
+              processing and machine learning to create intelligent
+              conversational experiences that feel human, scale effortlessly,
+              and continuously improve over time.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-4"
+                >
+                  <i class="ri-customer-service-line ri-lg"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                    24/7 Customer Support
+                  </h3>
+                  <p class="text-gray-600">
+                    Provide instant responses to customer inquiries at any time,
+                    reducing wait times and improving satisfaction.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-4"
+                >
+                  <i class="ri-line-chart-line ri-lg"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                    Increased Efficiency
+                  </h3>
+                  <p class="text-gray-600">
+                    Automate up to 80% of routine inquiries, allowing your team
+                    to focus on complex issues that require human expertise.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-4"
+                >
+                  <i class="ri-user-heart-line ri-lg"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                    Personalized Experiences
+                  </h3>
+                  <p class="text-gray-600">
+                    Deliver tailored interactions based on user history,
+                    preferences, and behavior patterns.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-1/2">
+            <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
+              <div class="flex items-center">
+                <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
+                <div class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
+                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                <div class="ml-4 text-gray-700 font-medium">
+                  AI Chatbot Demo
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+              <div style="height: 470px; overflow-y: auto;">
+                <iframe src="https://share.cody.bot/9eb4ce63-5ff8-4a16-9f37-00202649b436" width="100%" height="500px" frameborder="0" style="border: none;"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Powerful Features for Modern Businesses
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Our AI chatbot platform comes packed with enterprise-grade features
+            designed to enhance customer engagement and streamline operations.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Feature 1 -->
+          <div
+            class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-6"
+            >
+              <i class="ri-translate-2-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Multilingual Support
+            </h3>
+            <p class="text-gray-600">
+              Communicate with customers in over 100 languages with real-time
+              translation capabilities, expanding your global reach.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div
+            class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-6"
+            >
+              <i class="ri-emotion-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Sentiment Analysis
+            </h3>
+            <p class="text-gray-600">
+              Detect customer emotions and adjust responses accordingly,
+              escalating to human agents when necessary for sensitive
+              situations.
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div
+            class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-6"
+            >
+              <i class="ri-database-2-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Knowledge Base Integration
+            </h3>
+            <p class="text-gray-600">
+              Connect your existing documentation and FAQs to provide accurate,
+              consistent information across all customer touchpoints.
+            </p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div
+            class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-6"
+            >
+              <i class="ri-bar-chart-box-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Advanced Analytics
+            </h3>
+            <p class="text-gray-600">
+              Gain valuable insights into customer inquiries, satisfaction
+              levels, and chatbot performance with comprehensive reporting
+              tools.
+            </p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div
+            class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-6"
+            >
+              <i class="ri-plug-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Seamless Integrations
+            </h3>
+            <p class="text-gray-600">
+              Connect with your CRM, help desk, e-commerce platform, and other
+              business tools for a unified customer experience.
+            </p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div
+            class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-6"
+            >
+              <i class="ri-shield-check-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Enterprise-Grade Security
+            </h3>
+            <p class="text-gray-600">
+              Protect sensitive customer data with end-to-end encryption, GDPR
+              compliance, and SOC 2 certified infrastructure.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            How Our AI Chatbot Works
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            A simple, streamlined process from implementation to continuous
+            improvement.
+          </p>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Step 1 -->
+            <div class="relative">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-20 h-20 flex items-center justify-center bg-primary rounded-full text-white text-2xl font-bold mb-4 z-10"
+                >
+                  1
+                </div>
+                <div
+                  class="hidden md:block absolute top-10 left-[calc(50%+2.5rem)] w-full h-2 bg-gray-200 -z-10"
+                ></div>
+                <h3
+                  class="text-xl font-semibold text-gray-900 mb-3 text-center"
+                >
+                  Consultation & Setup
+                </h3>
+                <p class="text-gray-600 text-center">
+                  We analyze your needs and configure the chatbot to align with
+                  your business goals.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="relative">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-20 h-20 flex items-center justify-center bg-primary rounded-full text-white text-2xl font-bold mb-4 z-10"
+                >
+                  2
+                </div>
+                <div
+                  class="hidden md:block absolute top-10 left-[calc(50%+2.5rem)] w-full h-2 bg-gray-200 -z-10"
+                ></div>
+                <h3
+                  class="text-xl font-semibold text-gray-900 mb-3 text-center"
+                >
+                  Training & Integration
+                </h3>
+                <p class="text-gray-600 text-center">
+                  We train the AI with your content and integrate it with your
+                  existing systems.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="relative">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-20 h-20 flex items-center justify-center bg-primary rounded-full text-white text-2xl font-bold mb-4 z-10"
+                >
+                  3
+                </div>
+                <div
+                  class="hidden md:block absolute top-10 left-[calc(50%+2.5rem)] w-full h-2 bg-gray-200 -z-10"
+                ></div>
+                <h3
+                  class="text-xl font-semibold text-gray-900 mb-3 text-center"
+                >
+                  Testing & Deployment
+                </h3>
+                <p class="text-gray-600 text-center">
+                  We rigorously test the chatbot before launching it on your
+                  chosen platforms.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="relative">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-20 h-20 flex items-center justify-center bg-primary rounded-full text-white text-2xl font-bold mb-4 z-10"
+                >
+                  4
+                </div>
+                <h3
+                  class="text-xl font-semibold text-gray-900 mb-3 text-center"
+                >
+                  Optimization & Growth
+                </h3>
+                <p class="text-gray-600 text-center">
+                  We continuously monitor performance and refine the AI based on
+                  real interactions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+
+    <!-- Implementation Timeline -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Implementation Timeline
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Our streamlined process ensures a smooth transition to AI-powered
+            customer support.
+          </p>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+          <div class="relative">
+            <!-- Timeline Line -->
+            <div
+              class="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-gray-300 transform md:translate-x-[-50%]"
+            ></div>
+
+            <!-- Week 1 -->
+            <div class="relative flex flex-col md:flex-row items-center mb-12">
+              <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  Week 1: Discovery & Planning
+                </h3>
+                <p class="text-gray-600">
+                  We analyze your requirements, identify key use cases, and
+                  develop a customized implementation plan.
+                </p>
+              </div>
+              <div
+                class="w-10 h-10 flex items-center justify-center bg-primary rounded-full text-white z-10 md:absolute md:left-1/2 md:transform md:translate-x-[-50%]"
+              >
+                1
+              </div>
+              <div class="md:w-1/2 md:pl-12"></div>
+            </div>
+
+            <!-- Week 2 -->
+            <div class="relative flex flex-col md:flex-row items-center mb-12">
+              <div
+                class="md:w-1/2 md:pr-12 md:text-right order-1 md:order-none"
+              ></div>
+              <div
+                class="w-10 h-10 flex items-center justify-center bg-primary rounded-full text-white z-10 md:absolute md:left-1/2 md:transform md:translate-x-[-50%] order-2 md:order-none mb-6 md:mb-0"
+              ></div>
+              <div class="md:w-1/2 md:pl-12 order-3 md:order-none">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  Week 2: Configuration & Training
+                </h3>
+                <p class="text-gray-600">
+                  We set up your chatbot, integrate with your systems, and begin
+                  training the AI with your content.
+                </p>
+              </div>
+            </div>
+
+            <!-- Week 3 -->
+            <div class="relative flex flex-col md:flex-row items-center mb-12">
+              <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  Week 3: Testing & Refinement
+                </h3>
+                <p class="text-gray-600">
+                  We conduct rigorous testing, gather feedback, and make
+                  necessary adjustments to optimize performance.
+                </p>
+              </div>
+              <div
+                class="w-10 h-10 flex items-center justify-center bg-primary rounded-full text-white z-10 md:absolute md:left-1/2 md:transform md:translate-x-[-50%]"
+              >
+                3
+              </div>
+              <div class="md:w-1/2 md:pl-12"></div>
+            </div>
+
+            <!-- Week 4 -->
+            <div class="relative flex flex-col md:flex-row items-center">
+              <div
+                class="md:w-1/2 md:pr-12 md:text-right order-1 md:order-none"
+              ></div>
+              <div
+                class="w-10 h-10 flex items-center justify-center bg-primary rounded-full text-white z-10 md:absolute md:left-1/2 md:transform md:translate-x-[-50%] order-2 md:order-none mb-6 md:mb-0"
+              >
+                4
+              </div>
+              <div class="md:w-1/2 md:pl-12 order-3 md:order-none">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  Week 4: Launch & Ongoing Support
+                </h3>
+                <p class="text-gray-600">
+                  We deploy your chatbot, provide training for your team, and
+                  establish ongoing monitoring and optimization processes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Case Study Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Success Story
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            See how our AI chatbot solution transformed customer service for a
+            leading e-commerce company.
+          </p>
+        </div>
+
+        <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden max-w-5xl mx-auto"
+        >
+          <div class="flex flex-col lg:flex-row">
+            <div class="lg:w-1/2">
+              <img
+                src="https://public.readdy.ai/ai/img_res/bc80d4147a5c374d5b9b309e1bffa2b7.jpg"
+                alt="NorthStar Apparel Case Study"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="lg:w-1/2 p-8">
+              <div class="flex items-center mb-4">
+                <span
+                  class="bg-blue-100 text-primary text-sm font-medium px-3 py-1 rounded-full"
+                  >E-commerce</span
+                >
+              </div>
+              <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+                An E-commerce Revolution.
+              </h3>
+              <p class="text-gray-600 mb-6">
+                A premium clothing retailer with over 50,000
+                monthly customers, was struggling to manage customer inquiries
+                efficiently during peak shopping seasons.
+              </p>
+
+              <div class="space-y-4 mb-6">
+                <div class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1"
+                  >
+                    <i class="ri-checkbox-circle-fill"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">Challenge</h4>
+                    <p class="text-gray-600">
+                      Long response times, overwhelmed support team, and
+                      declining customer satisfaction scores.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1"
+                  >
+                    <i class="ri-checkbox-circle-fill"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">Solution</h4>
+                    <p class="text-gray-600">
+                      Implemented our AI chatbot with product recommendation
+                      engine, order tracking, and seamless human handoff.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1"
+                  >
+                    <i class="ri-checkbox-circle-fill"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">Results</h4>
+                    <p class="text-gray-600">
+                      137% increase in online sales, 82% reduction in response
+                      time, and 45% decrease in support costs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/bc80d4147a5c374d5b9b309e1bffa2b7.jpg"
+                  alt="Sarah Reynolds"
+                  class="w-12 h-12 rounded-full mr-4"
+                />
+                <div>
+                  <p class="text-gray-900 font-medium">
+                    "The AI chatbot transformed many customer service operations
+                    and directly contributed to there revenue growth."
+                  </p>
+                  <p class="text-sm text-gray-600">
+                    <i>- Anoop Verma, Co-Founder</i>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Find answers to common questions about our AI chatbot solutions.
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+          <div class="space-y-6">
+            <!-- FAQ Item 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <button
+                class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none"
+                onclick="toggleFAQ(this)"
+              >
+                <span class="text-lg font-medium text-gray-900"
+                  >How long does it take to implement the AI chatbot?</span
+                >
+                <span
+                  class="w-5 h-5 flex items-center justify-center text-primary transform transition-transform duration-300"
+                >
+                  <i class="ri-arrow-down-s-line"></i>
+                </span>
+              </button>
+              <div class="px-6 py-4 border-t border-gray-100 hidden">
+                <p class="text-gray-600">
+                  Typical implementation takes 2-4 weeks depending on the
+                  complexity of your requirements and the level of customization
+                  needed. Our Professional and Enterprise plans include
+                  expedited implementation options that can reduce this
+                  timeframe.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <button
+                class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none"
+                onclick="toggleFAQ(this)"
+              >
+                <span class="text-lg font-medium text-gray-900"
+                  >Can the chatbot integrate with our existing CRM system?</span
+                >
+                <span
+                  class="w-5 h-5 flex items-center justify-center text-primary transform transition-transform duration-300"
+                >
+                  <i class="ri-arrow-down-s-line"></i>
+                </span>
+              </button>
+              <div class="px-6 py-4 border-t border-gray-100 hidden">
+                <p class="text-gray-600">
+                  Yes, our AI chatbot platform offers seamless integration with
+                  major CRM systems including Salesforce, HubSpot, Zoho, and
+                  Microsoft Dynamics. We also provide custom API integration
+                  options for proprietary systems. This allows the chatbot to
+                  access customer data, update records, and provide personalized
+                  service.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <button
+                class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none"
+                onclick="toggleFAQ(this)"
+              >
+                <span class="text-lg font-medium text-gray-900"
+                  >How does the chatbot handle complex customer inquiries?</span
+                >
+                <span
+                  class="w-5 h-5 flex items-center justify-center text-primary transform transition-transform duration-300"
+                >
+                  <i class="ri-arrow-down-s-line"></i>
+                </span>
+              </button>
+              <div class="px-6 py-4 border-t border-gray-100 hidden">
+                <p class="text-gray-600">
+                  Our AI chatbot uses advanced natural language processing to
+                  understand and respond to a wide range of inquiries. For
+                  complex issues that require human intervention, the chatbot
+                  includes a seamless handoff feature that transfers the
+                  conversation to a human agent along with the full conversation
+                  history. The system also learns from these interactions to
+                  improve future responses.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <button
+                class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none"
+                onclick="toggleFAQ(this)"
+              >
+                <span class="text-lg font-medium text-gray-900"
+                  >Is the chatbot secure and compliant with data protection
+                  regulations?</span
+                >
+                <span
+                  class="w-5 h-5 flex items-center justify-center text-primary transform transition-transform duration-300"
+                >
+                  <i class="ri-arrow-down-s-line"></i>
+                </span>
+              </button>
+              <div class="px-6 py-4 border-t border-gray-100 hidden">
+                <p class="text-gray-600">
+                  Absolutely. Our platform is built with security as a priority.
+                  We offer end-to-end encryption, SOC 2 compliance, and
+                  GDPR-compliant data handling practices. Enterprise plans
+                  include additional security features such as single sign-on
+                  (SSO), role-based access control, and custom data retention
+                  policies to meet specific regulatory requirements.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <button
+                class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none"
+                onclick="toggleFAQ(this)"
+              >
+                <span class="text-lg font-medium text-gray-900"
+                  >Can we customize the chatbot's appearance to match our
+                  brand?</span
+                >
+                <span
+                  class="w-5 h-5 flex items-center justify-center text-primary transform transition-transform duration-300"
+                >
+                  <i class="ri-arrow-down-s-line"></i>
+                </span>
+              </button>
+              <div class="px-6 py-4 border-t border-gray-100 hidden">
+                <p class="text-gray-600">
+                  Yes, all plans include customization options to align the
+                  chatbot with your brand identity. You can customize colors,
+                  fonts, avatar images, and conversation styles. Professional
+                  and Enterprise plans offer advanced customization including
+                  custom UI elements, branded chat interfaces, and personalized
+                  conversation flows that reflect your brand voice and values.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Related Services Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Explore Related Services
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Enhance your digital strategy with our complementary solutions.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Meta Advertising -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+          >
+            <div class="h-48 bg-blue-50 flex items-center justify-center">
+              <div
+                class="w-20 h-20 flex items-center justify-center text-primary"
+              >
+                <i class="ri-facebook-circle-fill ri-3x"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                Meta Advertising Services
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Strategic Facebook and Instagram ad campaigns that target your
+                ideal customers with precision, maximizing your ROI.
+              </p>
+              <a
+                href="Facebook.html"
+                
+                class="text-primary font-medium flex items-center"
+              >
+                Learn more
+                <span class="ml-2 w-5 h-5 flex items-center justify-center">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Animated Advertisements -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+          >
+            <div class="h-48 bg-blue-50 flex items-center justify-center">
+              <div
+                class="w-20 h-20 flex items-center justify-center text-primary"
+              >
+                <i class="ri-movie-line ri-3x"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                Animated Advertisements
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Eye-catching animated ads that capture attention and communicate
+                your message effectively across digital platforms.
+              </p>
+              <a
+                href="ads_making.html"
+                
+                class="text-primary font-medium flex items-center"
+              >
+                Learn more
+                <span class="ml-2 w-5 h-5 flex items-center justify-center">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- UI/UX Design -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+          >
+            <div class="h-48 bg-blue-50 flex items-center justify-center">
+              <div
+                class="w-20 h-20 flex items-center justify-center text-primary"
+              >
+                <i class="ri-layout-line ri-3x"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                UI/UX Design Services
+              </h3>
+              <p class="text-gray-600 mb-4">
+                User-centered design solutions that enhance customer experience,
+                improve engagement, and drive conversions.
+              </p>
+              <a
+                href="ads_making.html"
+                
+                class="text-primary font-medium flex items-center"
+              >
+                Learn more
+                <span class="ml-2 w-5 h-5 flex items-center justify-center">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+          <div class="lg:col-span-2">
+            <div class="flex items-center">
+              <a href="index.html" class="flex items-center space-x-2">
+                <img src="Images/Main_logo.png" alt="LM Logo" class="h-10 w-auto" />
+              </a>
+            </div>
+            <p class="text-gray-400 mb-6 max-w-md">
+            </br>
+              Empowering businesses with innovative digital solutions to drive
+              growth, enhance customer engagement, and maximize ROI in today's
+              competitive marketplace.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                title="Facebook"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+              >
+                <i class="ri-twitter-x-fill"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/aadiverma/"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+              >
+              <i class="ri-linkedin-fill"></i>
+              <a
+                href="https://www.linkedin.com/company/leadminnow/about"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/leadminnow/"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Services</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="Facebook.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Digital Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Facebook.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Meta Ads</a
+                >
+              </li>
+              <li>
+                <a
+                  href="ads_making.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Animated Ads</a
+                >
+              </li>
+              <li>
+                <a
+                  href="AI-Chatbot.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >AI Chatbots</a
+                >
+              </li>
+              <li>
+                <a
+                  href="ads_making.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >UI/UX Design</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="AboutUs.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Case Studies</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Testimonials</a
+              
+              <li>
+                <a
+                  href="Contact_us.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Store Information</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2 mt-0.5"
+                >
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <span class="text-gray-400"
+                  >123 Demo-1, New York, NY 10001</span
+                >
+              </li>
+              <li class="flex items-center">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2"
+                >
+                  <i class="ri-phone-line"></i>
+                </div>
+                <span class="text-gray-400">+91 8085247210</span>
+              </li>
+              <li class="flex items-center">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2"
+                >
+                  <i class="ri-mail-line"></i>
+                </div>
+                <span class="text-gray-400">aaditya@leadminnow.com</span>
+              </li>
+              <li class="flex items-center">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2"
+                >
+                  <i class="ri-time-line"></i>
+                </div>
+                <span class="text-gray-400"
+                  >Mon-Fri: 8AM-9PM, Sat: 10AM-4PM</span
+                >
+              </li>
+            </ul>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  class="w-full px-4 py-2 bg-gray-800 border-none rounded-l text-white text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+                <button
+                  class="bg-primary text-white px-4 py-2 !rounded-r-button whitespace-nowrap font-medium hover:bg-primary/90 transition-colors"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-500 text-sm mb-4 md:mb-0">
+            © 2025 LeadMinnow. All rights reserved.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              href="#"
+              class="text-gray-500 text-sm hover:text-white transition-colors"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-gray-500 text-sm hover:text-white transition-colors"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              class="text-gray-500 text-sm hover:text-white transition-colors"
+              >Cookie Policy</a
+            >
+          </div>
+          <div class="flex items-center mt-4 md:mt-0">
+            <span class="text-gray-500 text-sm mr-4">Payment Methods:</span>
+            <div class="flex space-x-3">
+              <div
+                class="w-8 h-8 flex items-center justify-center text-gray-400"
+              >
+                <i class="ri-visa-fill ri-lg"></i>
+              </div>
+              <div
+                class="w-8 h-8 flex items-center justify-center text-gray-400"
+              >
+                <i class="ri-mastercard-fill ri-lg"></i>
+              </div>
+              <div
+                class="w-8 h-8 flex items-center justify-center text-gray-400"
+              >
+                <i class="ri-paypal-fill ri-lg"></i>
+              </div>
+              <div
+                class="w-8 h-8 flex items-center justify-center text-gray-400"
+              >
+                <i class="ri-apple-fill ri-lg"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+ 
+
+    <script>
+      // Custom checkbox functionality
+      document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+        checkbox.addEventListener("change", function () {
+          const parent = this.parentElement;
+          const checkmark = parent.querySelector(".absolute");
+          if (this.checked) {
+            checkmark.classList.remove("hidden");
+          } else {
+            checkmark.classList.add("hidden");
+          }
+        });
+
+        checkbox.parentElement.addEventListener("click", function () {
+          const checkboxInput = this.querySelector('input[type="checkbox"]');
+          checkboxInput.checked = !checkboxInput.checked;
+          const event = new Event("change");
+          checkboxInput.dispatchEvent(event);
+        });
+      });
+
+      // FAQ toggle functionality
+      function toggleFAQ(button) {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector("span:last-child");
+
+        if (content.classList.contains("hidden")) {
+          content.classList.remove("hidden");
+          icon.classList.add("rotate-180");
+        } else {
+          content.classList.add("hidden");
+          icon.classList.remove("rotate-180");
+        }
+      }
+
+      // Initialize charts
+      document.addEventListener("DOMContentLoaded", function () {
+        // Performance Chart
+        const performanceChart = echarts.init(
+          document.getElementById("performanceChart"),
+        );
+        const performanceOption = {
+          animation: false,
+          tooltip: {
+            trigger: "axis",
+            backgroundColor: "rgba(255, 255, 255, 0.8)",
+            textStyle: {
+              color: "#1f2937",
+            },
+          },
+          legend: {
+            data: ["Without AI Chatbot", "With AI Chatbot"],
+            textStyle: {
+              color: "#1f2937",
+            },
+          },
+          grid: {
+            left: "3%",
+            right: "4%",
+            bottom: "3%",
+            top: "15%",
+            containLabel: true,
+          },
+          xAxis: {
+            type: "category",
+            data: ["Response Time", "Support Costs", "Customer Inquiries"],
+            axisLine: {
+              lineStyle: {
+                color: "#d1d5db",
+              },
+            },
+            axisLabel: {
+              color: "#1f2937",
+            },
+          },
+          yAxis: {
+            type: "value",
+            axisLine: {
+              lineStyle: {
+                color: "#d1d5db",
+              },
+            },
+            axisLabel: {
+              color: "#1f2937",
+              formatter: "{value}%",
+            },
+          },
+          series: [
+            {
+              name: "Without AI Chatbot",
+              type: "bar",
+              data: [100, 100, 100],
+              itemStyle: {
+                color: "rgba(252, 141, 98, 1)",
+                borderRadius: [5, 5, 0, 0],
+              },
+            },
+            {
+              name: "With AI Chatbot",
+              type: "bar",
+              data: [18, 55, 175],
+              itemStyle: {
+                color: "rgba(87, 181, 231, 1)",
+                borderRadius: [5, 5, 0, 0],
+              },
+            },
+          ],
+        };
+        performanceChart.setOption(performanceOption);
+
+        // Satisfaction Chart
+        const satisfactionChart = echarts.init(
+          document.getElementById("satisfactionChart"),
+        );
+        const satisfactionOption = {
+          animation: false,
+          tooltip: {
+            trigger: "axis",
+            backgroundColor: "rgba(255, 255, 255, 0.8)",
+            textStyle: {
+              color: "#1f2937",
+            },
+          },
+          grid: {
+            left: "3%",
+            right: "4%",
+            bottom: "3%",
+            top: "15%",
+            containLabel: true,
+          },
+          xAxis: {
+            type: "category",
+            data: ["Month 1", "Month 2", "Month 3", "Month 4", "Month 5", "Month 6"],
+            axisLine: {
+              lineStyle: {
+                color: "#d1d5db",
+              },
+            },
+            axisLabel: {
+              color: "#1f2937",
+            },
+          },
+          yAxis: {
+            type: "value",
+            min: 60,
+            max: 100,
+            axisLine: {
+              lineStyle: {
+                color: "#d1d5db",
+              },
+            },
+            axisLabel: {
+              color: "#1f2937",
+            },
+          },
+          series: [
+            {
+              name: "Customer Satisfaction",
+              type: "line",
+              data: [72, 78, 83, 88, 92, 95],
+              smooth: true,
+              symbol: "none",
+              lineStyle: {
+                color: "rgba(87, 181, 231, 1)",
+                width: 4,
+              },
+              areaStyle: {
+                color: {
+                  type: "linear",
+                  x: 0,
+                  y: 0,
+                  x2: 0,
+                  y2: 1,
+                  colorStops: [
+                    {
+                      offset: 0,
+                      color: "rgba(87, 181, 231, 0.3)",
+                    },
+                    {
+                      offset: 1,
+                      color: "rgba(87, 181, 231, 0.1)",
+                    },
+                  ],
+                },
+              },
+            },
+          ],
+        };
+        satisfactionChart.setOption(satisfactionOption);
+        // Handle window resize
+        window.addEventListener("resize", function () {
+          performanceChart.resize();
+          satisfactionChart.resize();
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const leadForm = document.getElementById("leadForm");
+
+        leadForm.addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const formData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            message: document.getElementById("message").value,
+            source: "AI Chatbot Page"
+          };
+
+          try {
+            console.log("Sending request to server...");
+            const response = await fetch("http://127.0.0.1:3001/api/leads", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              body: JSON.stringify(formData)
+            });
+
+            console.log("Server response status:", response.status);
+
+            if (response.ok) {
+              const data = await response.json();
+              console.log("Success response:", data);
+              alert("Thank you for your message! We will get back to you soon.");
+              leadForm.reset();
+            } else {
+              const errorData = await response.text();
+              console.error("Server error response:", errorData);
+              alert(`Error: ${response.status} - ${errorData || "Failed to send message"}`);
+            }
+          } catch (error) {
+            console.error("Error details:", error);
+            alert("Connection error: Please make sure the server is running and try again.");
+          }
+        });
+      });
+    </script>
+    <!-- Add chatbot scripts -->
+    <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/04/18/15/20250418150249-PM36R8KH.js"></script>
+    <!-- Add formHandler.js before closing body tag -->
+    <script src="formHandler.js"></script>
+  </body>
+</html>

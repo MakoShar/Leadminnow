@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Leadminnow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="Images/Main_logo.png" type="image/png" />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4285F4", secondary: "#34A853" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+          font-family: 'Inter', sans-serif;
+      }
+      .template-card:hover .template-actions {
+          opacity: 1;
+      }
+      .template-actions {
+          opacity: 0;
+          transition: opacity 0.3s ease;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: #1e40af;
+          cursor: pointer;
+      }
+      input[type="checkbox"] {
+          display: none;
+      }
+      .custom-checkbox {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          border: 2px solid #e2e8f0;
+          border-radius: 4px;
+          position: relative;
+          cursor: pointer;
+          transition: all 0.2s ease;
+      }
+      input[type="checkbox"]:checked + .custom-checkbox {
+          background-color: #1e40af;
+          border-color: #1e40af;
+      }
+      input[type="checkbox"]:checked + .custom-checkbox::after {
+          content: '';
+          position: absolute;
+          left: 6px;
+          top: 2px;
+          width: 6px;
+          height: 12px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+      }
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .card img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5); /* translucent background */
+        color: white;
+        padding: 15px;
+        box-sizing: border-box;
+        transition: background 0.3s;
+      }
+
+      .card:hover .overlay {
+        background: rgba(0, 0, 0, 0.7);
+      }
+
+      .overlay h3 {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+
+      .overlay p {
+        margin: 5px 0 0;
+        font-size: 0.9rem;
+        color: #ccc;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Header -->
+    <header class="w-full bg-white shadow-sm border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center space-x-2">
+                  <img src="Images/Main_logo.png" alt="LM Logo" class="h-10 w-auto" />
+                </a>
+              </div>
+        <nav class="hidden md:flex items-center space-x-8">
+        <div class="relative group">
+        <button class="text-gray-700 hover:text-primary font-medium flex items-center">
+        Services
+        <span class="ml-1 w-5 h-5 flex items-center justify-center">
+        <i class="ri-arrow-down-s-line"></i>
+        </span>
+        </button>
+        <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+        <a href="AI-Chatbot.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">AI Chatbots</a>
+        <a href="Facebook.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Meta Ads</a>
+        <a href="ads_making.html" class="block px-4 py-2 text-sm text-primary font-medium hover:bg-gray-50">Animated Ads</a>
+        <a href="ads_making.html" class="block px-4 py-2 text-sm text-primary font-medium hover:bg-gray-50">UI/UX Design</a>
+        </div>
+        </div>
+        <a href="AboutUs.html" class="text-gray-700 hover:text-primary font-medium">About Us</a>
+        <a href="Contact_us.html" class="text-gray-700 hover:text-primary font-medium">Contact Us</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+        <div class="relative">
+        <button class="flex items-center text-gray-700 hover:text-primary">
+        EN
+        <span class="ml-1 w-5 h-5 flex items-center justify-center">
+        <i class="ri-arrow-down-s-line"></i>
+        </span>
+        </button>
+        <div class="absolute right-0 mt-2 w-24 bg-white shadow-lg rounded hidden">
+        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">EN</a>
+        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">FR</a>
+        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">DE</a>
+        </div>
+        </div>
+        <button class="bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap hover:bg-blue-600 transition-colors">Get Started</button>
+        </div>
+        </div>
+        </header>
+            <!-- Breadcrumb -->
+            <div class="bg-gray-50 py-3 border-b border-gray-200">
+                <div class="container mx-auto px-6">
+                  <div class="flex items-center text-sm text-gray-600">
+                    <a href="index.html" class="hover:text-primary">Home</a>
+                    <span class="mx-2">/</span>
+                    <a
+                      href="index.html"
+                      data-readdy="true"
+                      class="hover:text-primary"
+                      >Services</a
+                    >
+                    <span class="mx-2">/</span>
+                    <a
+                     href="ads_making.html"
+                     data-readdy="true"
+                     class="hover:text-primary"
+                    >Ads and UI/UX Design</a
+                     >
+                    <span class="mx-2">/</span>
+                    <span class="text-primary font-medium">Brand Logo Templates</span>
+                  </div>
+                </div>
+              </div>
+          
+    <!-- Hero Section -->
+    <section
+      class="relative overflow-hidden bg-gradient-to-r from-white to-blue-50"
+    >
+      <div
+        class="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center w-full"
+      >
+        <div class="md:w-1/2 mb-10 md:mb-0 z-10">
+          <h1
+            class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight"
+          >
+            Professional Brand Logo Templates for Your Business
+          </h1>
+          <p class="text-lg text-gray-600 mb-8 max-w-lg">
+            We Make Your Brand Stand Out with Our Top-Notch Logo,
+            You can Choose a logo templates or Discribe Your Brand Logo.
+        </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#templates"
+              class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-primary/90 transition duration-300 whitespace-nowrap !rounded-button"
+            >
+              Browse Templates
+            </a>
+            <a
+              href="Contact_us.html"
+              class="bg-white text-gray-800 px-6 py-3 rounded-button font-medium border border-gray-200 hover:bg-gray-50 transition duration-300 whitespace-nowrap !rounded-button"
+            >
+              Custom Request
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/2 relative z-10">
+          <div class="relative">
+            <img
+              src="https://public.readdy.ai/ai/img_res/9b027fa4e171033fd82ee98c1a974202.jpg"
+              alt="Logo Templates Showcase"
+              class="rounded-lg shadow-xl object-cover object-top"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  <!-- Image Cards Section -->
+
+
+
+<section class="py-12 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">Featured Logo Templates</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="Images/LEAD MINNOW/9.png" alt="Deep Seak" class="w-full h-48 object-cover">
+        <div class="p-4 bg-black bg-opacity-70 text-white">
+          <h3 class="font-semibold">Win Tech</h3>
+          <p class="text-sm text-gray-300">Emblem Logo</p>
+        </div>
+      </div>
+
+
+
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="Images/LEAD MINNOW/10.png" alt="Luxe Heritage" class="w-full h-48 object-cover">
+        <div class="p-4 bg-black bg-opacity-70 text-white">
+          <h3 class="font-semibold">Merina</h3>
+          <p class="text-sm text-gray-300">Modern</p>
+        </div>
+      </div>
+
+
+
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="Images/LEAD MINNOW/12.png" alt="FlowCreative" class="w-full h-48 object-cover">
+        <div class="p-4 bg-black bg-opacity-70 text-white">
+          <h3 class="font-semibold">Deep Seak</h3>
+          <p class="text-sm text-gray-300">Minimal</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="Images/LEAD MINNOW/13.png" alt="GeoMatrix" class="w-full h-48 object-cover">
+        <div class="p-4 bg-black bg-opacity-70 text-white">
+          <h3 class="font-semibold">Lead anchor</h3>
+          <p class="text-sm text-gray-300">Minimal</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="Images/LEAD MINNOW/14.png" alt="GeoMatrix" class="w-full h-48 object-cover">
+        <div class="p-4 bg-black bg-opacity-70 text-white">
+          <h3 class="font-semibold">Read ERA</h3>
+          <p class="text-sm text-gray-300">Emblem</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="Images/LEAD MINNOW/2.png" alt="GeoMatrix" class="w-full h-48 object-cover">
+        <div class="p-4 bg-black bg-opacity-70 text-white">
+          <h3 class="font-semibold">Cat Fish</h3>
+          <p class="text-sm text-gray-300">Geometric</p>
+        </div>
+      </div>
+
+
+
+
+
+      
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="Images/LEAD MINNOW/15.png" alt="GeoMatrix" class="w-full h-48 object-cover">
+        <div class="p-4 bg-black bg-opacity-70 text-white">
+          <h3 class="font-semibold">Lob Star</h3>
+          <p class="text-sm text-gray-300">Emblem</p>
+        </div>
+      </div>
+
+
+
+
+
+      
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="Images/LEAD MINNOW/3.png" alt="GeoMatrix" class="w-full h-48 object-cover">
+        <div class="p-4 bg-black bg-opacity-70 text-white">
+          <h3 class="font-semibold">Lobster</h3>
+          <p class="text-sm text-gray-300">Modern Vintage</p>
+        </div>
+      </div>
+
+
+
+
+
+      
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="Images/LEAD MINNOW/26.png" alt="GeoMatrix" class="w-full h-48 object-cover">
+        <div class="p-4 bg-black bg-opacity-70 text-white">
+          <h3 class="font-semibold">B-style</h3>
+          <p class="text-sm text-gray-300">Text</p>
+        </div>
+      </div>
+
+
+
+
+
+      
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="Images/LEAD MINNOW/014.png" alt="GeoMatrix" class="w-full h-48 object-cover">
+        <div class="p-4 bg-black bg-opacity-70 text-white">
+          <h3 class="font-semibold">Mallow</h3>
+          <p class="text-sm text-gray-300">Text</p>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</section>
+ <!-- Filter Section -->
+ <section class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <div
+        class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4"
+      >
+        <h2 class="text-2xl font-bold text-gray-900">
+          Premium Logo Templates
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="Search templates..."
+              class="border border-gray-200 rounded-button py-2 pl-10 pr-4 w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-primary/20 text-sm"
+            />
+            <div
+              class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center text-gray-400"
+            >
+              <i class="ri-search-line"></i>
+            </div>
+          </div>
+          <div class="relative">
+            <button
+              class="flex items-center gap-2 border border-gray-200 rounded-button py-2 px-4 text-sm font-medium bg-white hover:bg-gray-50 whitespace-nowrap !rounded-button"
+            >
+              <span>Categories</span>
+              <i class="ri-arrow-down-s-line"></i>
+            </button>
+          </div>
+          <div class="relative">
+            <button
+              class="flex items-center gap-2 border border-gray-200 rounded-button py-2 px-4 text-sm font-medium bg-white hover:bg-gray-50 whitespace-nowrap !rounded-button"
+            >
+              <span>Sort By</span>
+              <i class="ri-arrow-down-s-line"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <!-- Templates Gallery -->
+    <section id="templates" class="pb-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        >
+          <!-- Template 1 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden template-card group"
+          >
+            <div class="relative">
+              <img
+                src="Images/LEAD MINNOW/1.png"
+                alt="Modern Logo"
+                class="w-full h-48 object-cover object-top"
+              />
+              <div
+                class="template-actions absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3"
+              >
+                <button
+                  class="bg-white text-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 whitespace-nowrap !rounded-full"
+                  title="Preview Template"
+                >
+                  <i class="ri-eye-line"></i>
+                </button>
+                <button
+                  class="bg-primary text-white p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-primary/90 whitespace-nowrap !rounded-full"
+                  title="Download Template"
+                >
+                  <i class="ri-download-line"></i>
+                </button>
+                <button
+                  class="bg-white text-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 whitespace-nowrap !rounded-full"
+                  title="Add to Favorites"
+                >
+                  <i class="ri-heart-line"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-900">Deep Seak</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-sm text-gray-500">Modern Logo</span>
+                <span class="text-sm font-medium text-primary">Premium</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 2 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden template-card group"
+          >
+            <div class="relative">
+              <img
+                src="https://public.readdy.ai/ai/img_res/76c7068c8dd181136ba4b1f99bf146a6.jpg"
+                alt="Vintage Luxury Logo"
+                class="w-full h-48 object-cover object-top"
+              />
+              <div
+                class="template-actions absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3"
+              >
+                <button
+                  class="bg-white text-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 whitespace-nowrap !rounded-full"
+                  title="Preview Template"
+                >
+                  <i class="ri-eye-line"></i>
+                </button>
+                <button
+                  class="bg-primary text-white p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-primary/90 whitespace-nowrap !rounded-full"
+                  title="Download Template"
+                >
+                  <i class="ri-download-line"></i>
+                </button>
+                <button
+                  class="bg-white text-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 whitespace-nowrap !rounded-full"
+                  title="Add to Favorites"
+                >
+                  <i class="ri-heart-line"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-900">Luxe Heritage</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-sm text-gray-500">Vintage</span>
+                <span class="text-sm font-medium text-primary">Premium</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 3 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden template-card group"
+          >
+            <div class="relative">
+              <img
+                src="https://public.readdy.ai/ai/img_res/88c19c3b713f2109ed5f2cc44e9cafd0.jpg"
+                alt="Abstract Creative Logo"
+                class="w-full h-48 object-cover object-top"
+              />
+              <div
+                class="template-actions absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3"
+              >
+                <button
+                  class="bg-white text-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 whitespace-nowrap !rounded-full"
+                  title="Preview Template"
+                >
+                  <i class="ri-eye-line"></i>
+                </button>
+                <button
+                  class="bg-primary text-white p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-primary/90 whitespace-nowrap !rounded-full"
+                  title="Download Template"
+                >
+                  <i class="ri-download-line"></i>
+                </button>
+                <button
+                  class="bg-white text-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 whitespace-nowrap !rounded-full"
+                  title="Add to Favorites"
+                >
+                  <i class="ri-heart-line"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-900">FlowCreative</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-sm text-gray-500">Abstract</span>
+                <span class="text-sm font-medium text-primary">Premium</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 4 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden template-card group"
+          >
+            <div class="relative">
+              <img
+                src="Images/LEAD MINNOW/7.png"
+                alt="Geometric Corporate Logo"
+                class="w-full h-48 object-cover object-top"
+              />
+              <div
+                class="template-actions absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3"
+              >
+                <button
+                  class="bg-white text-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 whitespace-nowrap !rounded-full"
+                  title="Preview Template"
+                >
+                  <i class="ri-eye-line"></i>
+                </button>
+                <button
+                  class="bg-primary text-white p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-primary/90 whitespace-nowrap !rounded-full"
+                  title="Download Template"
+                >
+                  <i class="ri-download-line"></i>
+                </button>
+                <button
+                  class="bg-white text-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 whitespace-nowrap !rounded-full"
+                  title="Add to Favorites"
+                >
+                  <i class="ri-heart-line"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-900">GeoMatrix</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-sm text-gray-500">Geometric</span>
+                <span class="text-sm font-medium text-primary">Premium</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 5 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden template-card group"
+          >
+            <div class="relative">
+              <img
+                src="https://public.readdy.ai/ai/img_res/5810a2a6b93d06d42e7ccf77fb7b1a9d.jpg"
+                alt="Handcrafted Artisanal Logo"
+                class="w-full h-48 object-cover object-top"
+              />
+              <div
+                class="template-actions absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3"
+              >
+                <button
+                  class="bg-white text-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 whitespace-nowrap !rounded-full"
+                  title="Preview Template"
+                >
+                  <i class="ri-eye-line"></i>
+                </button>
+                <button
+                  class="bg-primary text-white p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-primary/90 whitespace-nowrap !rounded-full"
+                  title="Download Template"
+                >
+                  <i class="ri-download-line"></i>
+                </button>
+                <button
+                  class="bg-white text-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 whitespace-nowrap !rounded-full"
+                  title="Add to Favorites"
+                >
+                  <i class="ri-heart-line"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-900">ArtisanCraft</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-sm text-gray-500">Handcrafted</span>
+                <span class="text-sm font-medium text-primary">Premium</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 6 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden template-card group"
+          >
+            <div class="relative">
+              <img
+                src="Images/LEAD MINNOW/16.png"
+                alt="Typography Logo"
+                class="w-full h-48 object-cover object-top"
+              />
+              <div
+                class="template-actions absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3"
+              >
+                <button
+                  class="bg-white text-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 whitespace-nowrap !rounded-full"
+                  title="Preview Template"
+                >
+                  <i class="ri-eye-line"></i>
+                </button>
+                <button
+                  class="bg-primary text-white p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-primary/90 whitespace-nowrap !rounded-full"
+                  title="Download Template"
+                >
+                  <i class="ri-download-line"></i>
+                </button>
+                <button
+                  class="bg-white text-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 whitespace-nowrap !rounded-full"
+                  title="Add to Favorites"
+                >
+                  <i class="ri-heart-line"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-900">TypeMark</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-sm text-gray-500">Typography</span>
+                <span class="text-sm font-medium text-primary">Premium</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 7 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden template-card group"
+          >
+            <div class="relative">
+              <img
+                src="https://public.readdy.ai/ai/img_res/1494d5ee10bc0de5c5d0e3f9538f5598.jpg"
+                alt="Tech Circuit Logo"
+                class="w-full h-48 object-cover object-top"
+              />
+              <div
+                class="template-actions absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3"
+              >
+                <button
+                  class="bg-white text-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 whitespace-nowrap !rounded-full"
+                  title="Preview Template"
+                >
+                  <i class="ri-eye-line"></i>
+                </button>
+                <button
+                  class="bg-primary text-white p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-primary/90 whitespace-nowrap !rounded-full"
+                  title="Download Template"
+                >
+                  <i class="ri-download-line"></i>
+                </button>
+                <button
+                  class="bg-white text-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 whitespace-nowrap !rounded-full"
+                  title="Add to Favorites"
+                >
+                  <i class="ri-heart-line"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-900">CircuitCore</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-sm text-gray-500">Modern</span>
+                <span class="text-sm font-medium text-primary">Premium</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 8 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden template-card group"
+          >
+            <div class="relative">
+              <img
+                src="https://public.readdy.ai/ai/img_res/c5cad55b088a32376ce362727be64baf.jpg"
+                alt="Eco Nature Logo"
+                class="w-full h-48 object-cover object-top"
+              />
+              <div
+                class="template-actions absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-3"
+              >
+                <button
+                  class="bg-white text-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 whitespace-nowrap !rounded-full"
+                  title="Preview Template"
+                >
+                  <i class="ri-eye-line"></i>
+                </button>
+                <button
+                  type="button"
+                  title="Download Template"
+                  class="bg-primary text-white p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-primary/90 whitespace-nowrap !rounded-full"
+                >
+                  <i class="ri-download-line"></i>
+                </button>
+                <button
+                  type="button"
+                  title="Add to Favorites"
+                  class="bg-white text-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 whitespace-nowrap !rounded-full"
+                >
+                  <i class="ri-heart-line"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-900">EcoLeaf</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-sm text-gray-500">Organic</span>
+                <span class="text-sm font-medium text-primary">Premium</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <button
+            class="bg-white text-primary px-6 py-3 rounded-button font-medium border border-primary hover:bg-primary/5 transition duration-300 whitespace-nowrap !rounded-button"
+          >
+            Load More Templates
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Why Choose Our Logo Templates
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Our professionally designed templates offer everything you need to
+            create a memorable brand identity.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Feature 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-edit-2-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Fully Customizable
+            </h3>
+            <p class="text-gray-600">
+              You can revise up to 3 times to ensure your logo is perfect.
+            </p>
+          </div>
+          <!-- Feature 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-file-list-3-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Multiple File Formats & Custom Sizes.
+            </h3>
+            <p class="text-gray-600">
+              Download in PNG, JPG, Pdf formats and customize the size to
+              branding needs.
+            </p>
+          </div>
+          <!-- Feature 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-award-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Premium Quality
+            </h3>
+            <p class="text-gray-600">
+              Use your logo in the best quality for any commercial purposes.
+            </p>
+          </div>
+          <!-- Feature 4 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-customer-service-2-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Premium Support
+            </h3>
+            <p class="text-gray-600">
+              Get expert assistance from our design team whenever you need help.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">How It Works</h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Create your perfect logo in just a few simple steps.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Step 1 -->
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold"
+            >
+              1
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Choose a Template or Start From Scratch.
+            </h3>
+            <p class="text-gray-600">
+              Select a template that matches your
+              brand style or create a custom design.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold"
+            >
+              2
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Customize Your Design(Up to 3 Revisions)
+            </h3>
+            <p class="text-gray-600">
+              Personalize colors, fonts, and elements to create your unique
+              brand identity.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold"
+            >
+              3
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Download & Use
+            </h3>
+            <p class="text-gray-600">
+              Get your logo in multiple formats ready to use across all your
+              brand materials.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Simple, Transparent Pricing
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Choose the plan that works best for your business needs.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <!-- Free Plan -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Normal</h3>
+              <div class="flex items-baseline mb-6">
+                <span class="text-3xl font-bold text-gray-900">$5-$10</span>
+                <span class="text-gray-500 ml-1"></span>
+              </div>
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-center">
+                  <i class="ri-check-line text-green-500 mr-2"></i>
+                  <span class="text-gray-600">Access to Normal templates</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line text-green-500 mr-2"></i>
+                  <span class="text-gray-600">1 Revision </span>
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line text-green-500 mr-2"></i>
+                  <span class="text-gray-600">PNG/JPG downloads only</span>
+                </li>
+                <li class="flex items-center text-gray-400">
+                  <i class="ri-close-line text-red-500 mr-2"></i>
+                  <span>Basic customization</span>
+                </li>
+                <li class="flex items-center text-gray-400">
+                  <i class="ri-close-line text-red-500 mr-2"></i>
+                  <span>No premium templates</span>
+                </li>
+              </ul>
+              <button
+                onclick="window.location.href='Contact_us.html'"
+                class="w-full bg-gray-100 text-gray-800 px-4 py-3 rounded-button font-medium hover:bg-gray-200 transition duration-300 whitespace-nowrap !rounded-button"
+              >
+                Contact Support
+              </button>
+            </div>
+          </div>
+
+          <!-- Pro Plan -->
+          <div
+            class="bg-white rounded-lg shadow-xl overflow-hidden transform scale-105 border-2 border-primary"
+          >
+            <div class="bg-primary text-white py-2 text-center">
+              <span class="text-sm font-medium">MOST POPULAR</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Pro</h3>
+              <div class="flex items-baseline mb-6">
+                <span class="text-3xl font-bold text-gray-900">$19-$49</span>
+                <span class="text-gray-500 ml-1"></span>
+              </div>
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-center">
+                  <i class="ri-check-line text-green-500 mr-2"></i>
+                  <span class="text-gray-600"> Quick Support </span>
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line text-green-500 mr-2"></i>
+                  <span class="text-gray-600">Access to all templates</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line text-green-500 mr-2"></i>
+                  <span class="text-gray-600">Advanced customization</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line text-green-500 mr-2"></i>
+                  <span class="text-gray-600">All file formats</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line text-green-500 mr-2"></i>
+                  <span class="text-gray-600">3 Revisions</span>
+                </li>
+              </ul>
+              <button
+                class="w-full bg-primary text-white px-4 py-3 rounded-button font-medium hover:bg-primary/90 transition duration-300 whitespace-nowrap !rounded-button"
+              >
+                Get Started
+              </button>
+            </div>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Enterprise
+              </h3>
+              <div class="flex items-baseline mb-6">
+                <span class="text-3xl font-bold text-gray-900">$99</span>
+                <span class="text-gray-500 ml-1"></span>
+              </div>
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-center">
+                  <i class="ri-check-line text-green-500 mr-2"></i>
+                  <span class="text-gray-600">All Pro features</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line text-green-500 mr-2"></i>
+                  <span class="text-gray-600">Large scale Custom design requests</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line text-green-500 mr-2"></i>
+                  <span class="text-gray-600">Priority support</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line text-green-500 mr-2"></i>
+                  <span class="text-gray-600">Brand guidelines</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-check-line text-green-500 mr-2"></i>
+                  <span class="text-gray-600">Unlimited revisions</span>
+                </li>
+              </ul>
+              <button
+                class="w-full bg-white text-primary px-4 py-3 rounded-button font-medium border border-primary hover:bg-primary/5 transition duration-300 whitespace-nowrap !rounded-button"
+              >
+                Contact Sales
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            What Our Customers Say
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Hear from businesses that have transformed their brand with our logo
+            templates.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+            <div class="flex items-center mb-4">
+              <div class="text-amber-400 flex">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6">
+              "The logo templates are incredibly professional and easy to
+              customize. We found the perfect design for our tech startup in
+              minutes and received compliments from day one."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-4"
+              >
+                <i class="ri-user-3-line text-gray-500"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-900">Michael Thornton</h4>
+                <p class="text-sm text-gray-500">CEO, NexTech Solutions</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+            <div class="flex items-center mb-4">
+              <div class="text-amber-400 flex">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6">
+              "As a small business owner, I needed an affordable branding
+              solution. These templates exceeded my expectations. The quality is
+              outstanding and the customization options are endless."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-4"
+              >
+                <i class="ri-user-3-line text-gray-500"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-900">Samantha Rodriguez</h4>
+                <p class="text-sm text-gray-500">Owner, Bloom Boutique</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+            <div class="flex items-center mb-4">
+              <div class="text-amber-400 flex">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-fill"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6">
+              "The commercial license and multiple file formats made this
+              perfect for our rebranding project. We were able to use our logo
+              across all platforms without any issues."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-4"
+              >
+                <i class="ri-user-3-line text-gray-500"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-900">David Kwon</h4>
+                <p class="text-sm text-gray-500">
+                  Marketing Director, Fusion Media
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+          <div class="lg:col-span-2">
+            <div class="flex items-center">
+              <a href="index.html" class="flex items-center space-x-2">
+                <img src="Images/Main_logo.png" alt="LM Logo" class="h-10 w-auto" />
+              </a>
+            </div>
+            <p class="text-gray-400 mb-6 max-w-md mt-4">
+              Empowering businesses with innovative digital solutions to drive
+              growth, enhance customer engagement, and maximize ROI in today's
+              competitive marketplace.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" title="Facebook" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a href="#" title="Twitter" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                <i class="ri-twitter-x-fill"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/aadiverma/" title="Personal LinkedIn" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a href="https://www.linkedin.com/company/leadminnow/about" title="Company LinkedIn" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a href="https://www.instagram.com/leadminnow/" title="Instagram" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                <i class="ri-instagram-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Services</h3>
+            <ul class="space-y-3">
+              <li><a href="Facebook.html" class="text-gray-400 hover:text-white transition-colors">Digital Marketing</a></li>
+              <li><a href="Facebook.html" class="text-gray-400 hover:text-white transition-colors">Meta Ads</a></li>
+              <li><a href="ads_making.html" class="text-gray-400 hover:text-white transition-colors">Animated Ads</a></li>
+              <li><a href="AI-Chatbot.html" class="text-gray-400 hover:text-white transition-colors">AI Chatbots</a></li>
+              <li><a href="ads_making.html" class="text-gray-400 hover:text-white transition-colors">UI/UX Design</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-3">
+              <li><a href="AboutUs.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
+              <li><a href="Contact_us.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Store Information</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2 mt-0.5">
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <span class="text-gray-400">123 Demo-1, New York, NY 10001</span>
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2">
+                  <i class="ri-phone-line"></i>
+                </div>
+                <span class="text-gray-400">+91 8085247210</span>
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2">
+                  <i class="ri-mail-line"></i>
+                </div>
+                <span class="text-gray-400">aaditya@leadminnow.com</span>
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2">
+                  <i class="ri-time-line"></i>
+                </div>
+                <span class="text-gray-400">Mon-Fri: 8AM-9PM, Sat: 10AM-4PM</span>
+              </li>
+            </ul>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  class="w-full px-4 py-2 bg-gray-800 border-none rounded-l text-white text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+                <button
+                  class="bg-primary text-white px-4 py-2 !rounded-r-button whitespace-nowrap font-medium hover:bg-primary/90 transition-colors"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-500 text-sm mb-4 md:mb-0">
+            © 2025 LeadMinnow. All rights reserved.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="#" class="text-gray-500 text-sm hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" class="text-gray-500 text-sm hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" class="text-gray-500 text-sm hover:text-white transition-colors">Cookie Policy</a>
+          </div>
+          <div class="flex items-center mt-4 md:mt-0">
+            <span class="text-gray-500 text-sm mr-4">Payment Methods:</span>
+            <div class="flex space-x-3">
+              <div class="w-8 h-8 flex items-center justify-center text-gray-400" title="Visa">
+                <i class="ri-visa-fill ri-lg"></i>
+              </div>
+              <div class="w-8 h-8 flex items-center justify-center text-gray-400" title="Mastercard">
+                <i class="ri-mastercard-fill ri-lg"></i>
+              </div>
+              <div class="w-8 h-8 flex items-center justify-center text-gray-400" title="PayPal">
+                <i class="ri-paypal-fill ri-lg"></i>
+              </div>
+              <div class="w-8 h-8 flex items-center justify-center text-gray-400" title="Apple Pay">
+                <i class="ri-apple-fill ri-lg"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- Add chatbot scripts -->
+  <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/04/18/15/20250418150249-PM36R8KH.js"></script>
+</body>
+</html>

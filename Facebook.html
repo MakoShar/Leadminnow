@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital marketing & Meta ads - Leadminnow</title>
+    <link rel="icon" href="Images/Main_logo.png" type="image/png" />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3b82f6",
+              secondary: "#10b981",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Inter', sans-serif;
+      }
+      .hero-bg {
+      position: relative;
+      }
+      .hero-bg::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 40%, rgba(255,255,255,0) 100%);
+      z-index: 1;
+      }
+      .hero-content {
+      position: relative;
+      z-index: 2;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+      }
+      .custom-checkbox {
+      position: relative;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 4px;
+      transition: all 0.2s;
+      }
+      .custom-checkbox.checked {
+      background-color: #3b82f6;
+      border-color: #3b82f6;
+      }
+      .custom-checkbox.checked::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 6px;
+      width: 6px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      }
+      .custom-switch {
+      position: relative;
+      display: inline-block;
+      width: 48px;
+      height: 24px;
+      }
+      .custom-switch-track {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #e2e8f0;
+      border-radius: 34px;
+      transition: 0.4s;
+      }
+      .custom-switch-thumb {
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.4s;
+      }
+      .custom-switch.active .custom-switch-track {
+      background-color: #3b82f6;
+      }
+      .custom-switch.active .custom-switch-thumb {
+      transform: translateX(24px);
+      }
+      .faq-accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      }
+      .faq-accordion.active .faq-accordion-content {
+      max-height: 1000px;
+      }
+      .faq-accordion.active .faq-accordion-icon {
+      transform: rotate(180deg);
+      }
+      .tab-button.active {
+      color: #3b82f6;
+      border-color: #3b82f6;
+      }
+      .tab-content {
+      display: none;
+      }
+      .tab-content.active {
+      display: block;
+      }
+      .case-study-slider {
+      scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header Section -->
+    <header class="w-full bg-white shadow-sm">
+      <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+          <div class="flex items-center">
+              <a href="index.html" class="flex items-center space-x-2">
+                <img src="Images/Main_logo.png" alt="LM Logo" class="h-10 w-auto" />
+              </a>
+            </div>
+      <nav class="hidden md:flex items-center space-x-8">
+      <div class="relative group">
+      <button class="text-gray-700 hover:text-primary font-medium flex items-center">
+      Services
+      <span class="ml-1 w-5 h-5 flex items-center justify-center">
+      <i class="ri-arrow-down-s-line"></i>
+      </span>
+      </button>
+      <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+      <a href="AI-Chatbot.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">AI Chatbots</a>
+      <a href="Facebook.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Meta Ads</a>
+      <a href="ads_making.html" class="block px-4 py-2 text-sm text-primary font-medium hover:bg-gray-50">Animated Ads</a>
+      <a href="ads_making.html" class="block px-4 py-2 text-sm text-primary font-medium hover:bg-gray-50">UI/UX Design</a>
+      </div>
+      </div>
+      <a href="AboutUs.html" class="text-gray-700 hover:text-primary font-medium">About Us</a>
+      <a href="Contact_us.html" class="text-gray-700 hover:text-primary font-medium">Contact Us</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+      <div class="relative">
+      <button class="flex items-center text-gray-700 hover:text-primary">
+      EN
+      <span class="ml-1 w-5 h-5 flex items-center justify-center">
+      <i class="ri-arrow-down-s-line"></i>
+      </span>
+      </button>
+      <div class="absolute right-0 mt-2 w-24 bg-white shadow-lg rounded hidden">
+      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">EN</a>
+      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">FR</a>
+      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">DE</a>
+      </div>
+      </div>
+      <a
+      href="contact_us.html"
+      class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition-colors"
+      >Get Started</a
+    >
+      </div>
+      </div>
+      </header>
+      
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 py-3">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center text-sm text-gray-600">
+          <a
+            href="index.html"
+            data-readdy="true"
+            class="hover:text-primary transition-colors"
+            >Home</a
+          >
+          <div class="w-4 h-4 flex items-center justify-center mx-1">
+            <i class="ri-arrow-right-s-line"></i>
+          </div>
+          <a
+            href="index.html"
+            data-readdy="true"
+            class="hover:text-primary transition-colors"
+            >Services</a
+          >
+          <div class="w-4 h-4 flex items-center justify-center mx-1">
+            <i class="ri-arrow-right-s-line"></i>
+          </div>
+          <span class="text-primary">Digital Marketing & Meta Ads</span>
+        </div>
+      </div>
+    </div>
+    <!-- Hero Section -->
+    <section
+      class="hero-bg relative overflow-hidden hero-section"
+    >
+    <div
+        style="background-image: url('Images/ADS_banner.png'); background-size: cover; background-position: center;"
+        class="w-full h-[400px] relative"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-gray-900/30"
+        ></div>
+      <div class="container mx-auto px-4 py-20 md:py-28 w-full">
+        <div class="hero-content max-w-2xl">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Digital Marketing & Meta Ads
+          </h1>
+          <p class="text-lg md:text-xl text-gray-700 mb-8">
+            Strategic campaigns across Facebook, Instagram, and other platforms
+            to maximize your ROI and reach your target audience effectively.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="Contact_us.html"
+              class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition-colors text-center sm:text-left"
+            >
+            Schedule a Consultation
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- Key Benefits -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <div
+              class="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-full mb-4"
+            >
+              <i class="ri-target-line ri-xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Precise Audience Targeting
+            </h3>
+            <p class="text-gray-700">
+              Reach exactly who matters most to your business with advanced
+              demographic, interest, and behavior-based targeting.
+            </p>
+          </div>
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <div
+              class="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-full mb-4"
+            >
+              <i class="ri-line-chart-line ri-xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Measurable ROI
+            </h3>
+            <p class="text-gray-700">
+              Track every dollar spent with comprehensive analytics and
+              reporting to optimize your marketing investment.
+            </p>
+          </div>
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <div
+              class="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-full mb-4"
+            >
+              <i class="ri-global-line ri-xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Cross-Platform Reach
+            </h3>
+            <p class="text-gray-700">
+              Seamlessly connect with your audience across Facebook, Instagram,
+              Messenger, and the Meta Audience Network.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Service Description -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Comprehensive Meta Advertising Solutions
+            </h2>
+            <p class="text-lg text-gray-600">
+              Our expert team creates and manages high-performing campaigns that
+              drive real business results.
+            </p>
+          </div>
+          <div class="mb-16">
+            <p class="text-gray-700 mb-6">
+              In today's digital landscape, effective Meta advertising is
+              essential for businesses looking to grow their online presence and
+              drive meaningful results. Our team of certified Meta advertising
+              specialists combines strategic thinking with data-driven execution
+              to create campaigns that not only reach your target audience but
+              convert them into loyal customers.
+            </p>
+            <p class="text-gray-700 mb-6">
+              We understand that each business has unique goals and challenges,
+              which is why we develop customized Meta advertising strategies
+              tailored to your specific needs. Whether you're looking to
+              increase brand awareness, generate leads, drive website traffic,
+              or boost online sales, our comprehensive approach ensures that
+              your advertising budget is invested wisely for maximum return.
+            </p>
+            <p class="text-gray-700">
+              Our Meta advertising services leverage the full power of Facebook,
+              Instagram, Messenger, and the Meta Audience Network to create a
+              cohesive and effective advertising presence across multiple
+              platforms. We continuously monitor and optimize your campaigns,
+              making data-driven adjustments to improve performance and ensure
+              you're getting the best possible results from your digital
+              marketing investment.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div
+              class="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+            >
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mb-4"
+              >
+                <i class="ri-facebook-circle-fill ri-xl text-primary"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                Facebook Advertising
+              </h3>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"
+                  >
+                    <i class="ri-check-line"></i>
+                  </div>
+                  <span>News Feed ads that capture attention</span>
+                </li>
+                <li class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"
+                  >
+                    <i class="ri-check-line"></i>
+                  </div>
+                  <span>Right column ads for desktop users</span>
+                </li>
+                <li class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"
+                  >
+                    <i class="ri-check-line"></i>
+                  </div>
+                  <span>Marketplace ads for e-commerce businesses</span>
+                </li>
+                <li class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"
+                  >
+                    <i class="ri-check-line"></i>
+                  </div>
+                  <span>Video ads for engaging storytelling</span>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+            >
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-purple-50 rounded-full mb-4"
+              >
+                <i class="ri-instagram-fill ri-xl text-purple-500"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                Instagram Advertising
+              </h3>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"
+                  >
+                    <i class="ri-check-line"></i>
+                  </div>
+                  <span>Feed ads that blend with organic content</span>
+                </li>
+                <li class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"
+                  >
+                    <i class="ri-check-line"></i>
+                  </div>
+                  <span>Story ads for immersive experiences</span>
+                </li>
+                <li class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"
+                  >
+                    <i class="ri-check-line"></i>
+                  </div>
+                  <span>Explore ads to reach discovery-minded users</span>
+                </li>
+                <li class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"
+                  >
+                    <i class="ri-check-line"></i>
+                  </div>
+                  <span>Reels ads for short-form video content</span>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+            >
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-green-50 rounded-full mb-4"
+              >
+                <i class="ri-messenger-fill ri-xl text-green-500"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                Messenger Advertising
+              </h3>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"
+                  >
+                    <i class="ri-check-line"></i>
+                  </div>
+                  <span>Sponsored messages to reconnect with customers</span>
+                </li>
+                <li class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"
+                  >
+                    <i class="ri-check-line"></i>
+                  </div>
+                  <span>Click-to-Messenger ads to start conversations</span>
+                </li>
+                <li class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"
+                  >
+                    <i class="ri-check-line"></i>
+                  </div>
+                  <span>Home section ads for increased visibility</span>
+                </li>
+                <li class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"
+                  >
+                    <i class="ri-check-line"></i>
+                  </div>
+                  <span>Messenger Stories ads for ephemeral content</span>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+            >
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-orange-50 rounded-full mb-4"
+              >
+                <i class="ri-group-fill ri-xl text-orange-500"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                Audience Network
+              </h3>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"
+                  >
+                    <i class="ri-check-line"></i>
+                  </div>
+                  <span>Native ads that match app experiences</span>
+                </li>
+                <li class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"
+                  >
+                    <i class="ri-check-line"></i>
+                  </div>
+                  <span>Banner ads for wide-reaching campaigns</span>
+                </li>
+                <li class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"
+                  >
+                    <i class="ri-check-line"></i>
+                  </div>
+                  <span>Interstitial ads for high-impact messaging</span>
+                </li>
+                <li class="flex items-start">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"
+                  >
+                    <i class="ri-check-line"></i>
+                  </div>
+                  <span>Rewarded videos for engaged viewing</span>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Implementation Process -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Our Implementation Process
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            A strategic approach to creating and managing successful Meta
+            advertising campaigns.
+          </p>
+        </div>
+        <div class="relative max-w-4xl mx-auto">
+          <!-- Process Timeline Desktop -->
+          <div
+            class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gray-200 transform -translate-x-1/2"
+          ></div>
+          <div class="space-y-12 relative">
+            <!-- Step 1 -->
+            <div class="md:flex items-center">
+              <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  Discovery & Strategy
+                </h3>
+                <p class="text-gray-600">
+                  We begin by understanding your business goals, target
+                  audience, and current digital presence. Our team analyzes your
+                  industry, competitors, and identifies key opportunities to
+                  create a tailored Meta advertising strategy.
+                </p>
+              </div>
+              <div
+                class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-primary text-white items-center justify-center border-4 border-white"
+              >
+                <span class="font-bold">1</span>
+              </div>
+              <div
+                class="md:w-1/2 md:pl-12 flex md:justify-start justify-center"
+              >
+                <div
+                  class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full"
+                >
+                  <i class="ri-search-line ri-xl text-primary"></i>
+                </div>
+              </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="md:flex items-center">
+              <div
+                class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right order-1 md:order-none flex md:justify-end justify-center"
+              >
+                <div
+                  class="w-16 h-16 flex items-center justify-center bg-green-50 rounded-full"
+                >
+                  <i class="ri-palette-line ri-xl text-secondary"></i>
+                </div>
+              </div>
+              <div
+                class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-primary text-white items-center justify-center border-4 border-white"
+              >
+                <span class="font-bold">2</span>
+              </div>
+              <div class="md:w-1/2 md:pl-12 order-2">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  Creative Development
+                </h3>
+                <p class="text-gray-600">
+                  Our creative team designs compelling ad content that resonates
+                  with your target audience. We develop eye-catching visuals,
+                  persuasive copy, and engaging videos that align with your
+                  brand identity and campaign objectives.
+                </p>
+              </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="md:flex items-center">
+              <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  Campaign Setup & Launch
+                </h3>
+                <p class="text-gray-600">
+                  We meticulously configure your campaign settings, including
+                  audience targeting, placement optimization, bidding
+                  strategies, and conversion tracking. After thorough quality
+                  checks, we launch your campaigns across the Meta platform
+                  ecosystem.
+                </p>
+              </div>
+              <div
+                class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-primary text-white items-center justify-center border-4 border-white"
+              >
+                <span class="font-bold">3</span>
+              </div>
+              <div
+                class="md:w-1/2 md:pl-12 flex md:justify-start justify-center"
+              >
+                <div
+                  class="w-16 h-16 flex items-center justify-center bg-purple-50 rounded-full"
+                >
+                  <i class="ri-rocket-line ri-xl text-purple-500"></i>
+                </div>
+              </div>
+            </div>
+            <!-- Step 4 -->
+            <div class="md:flex items-center">
+              <div
+                class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right order-1 md:order-none flex md:justify-end justify-center"
+              >
+                <div
+                  class="w-16 h-16 flex items-center justify-center bg-orange-50 rounded-full"
+                >
+                  <i class="ri-line-chart-line ri-xl text-orange-500"></i>
+                </div>
+              </div>
+              <div
+                class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-primary text-white items-center justify-center border-4 border-white"
+              >
+                <span class="font-bold">4</span>
+              </div>
+              <div class="md:w-1/2 md:pl-12 order-2">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  Monitoring & Optimization
+                </h3>
+                <p class="text-gray-600">
+                  Our team continuously monitors campaign performance, analyzing
+                  key metrics and making data-driven optimizations. We refine
+                  targeting, adjust creative elements, and reallocate budget to
+                  maximize your return on ad spend.
+                </p>
+              </div>
+            </div>
+            <!-- Step 5 -->
+            <div class="md:flex items-center">
+              <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  Reporting & Analysis
+                </h3>
+                <p class="text-gray-600">
+                  We provide comprehensive performance reports with actionable
+                  insights. Our transparent reporting shows exactly how your
+                  campaigns are performing against key business objectives and
+                  identifies opportunities for future growth.
+                </p>
+              </div>
+              <div
+                class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-primary text-white items-center justify-center border-4 border-white"
+              >
+                <span class="font-bold">5</span>
+              </div>
+              <div
+                class="md:w-1/2 md:pl-12 flex md:justify-start justify-center"
+              >
+                <div
+                  class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full"
+                >
+                  <i class="ri-file-chart-line ri-xl text-primary"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Case Studies -->
+   <!-- <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Success Stories
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            See how our Meta advertising strategies have driven remarkable
+            results for businesses like yours.
+          </p>
+        </div>
+        <div class="relative max-w-5xl mx-auto">
+          <div
+            class="overflow-x-auto pb-8 case-study-slider"
+            id="caseStudySlider"
+          >
+            <div class="flex gap-6 min-w-max">
+               Case Study 1 
+              <div
+                class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 w-full max-w-md"
+              >
+                <img
+                  src="https://public.readdy.ai/ai/img_res/e93b96ec33563ef1a30917577896007b.jpg"
+                  alt="Fashion E-commerce Case Study"
+                  class="w-full h-56 object-cover object-top"
+                />
+                <div class="p-6">
+                  <div class="flex items-center mb-4">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded"
+                      >B2C</span
+                    >
+                    <span
+                      class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded ml-2"
+                      >E-commerce</span
+                    >
+                  </div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                    Fashion Retailer Revenue Growth
+                  </h3>
+                  <p class="text-gray-600 mb-4">
+                    Developed a comprehensive Meta advertising strategy for a
+                    fashion e-commerce brand, focusing on dynamic product ads
+                    and retargeting campaigns.
+                  </p>
+                  <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <p class="text-sm text-gray-500">
+                        ROAS (Return on Ad Spend)
+                      </p>
+                      <div class="flex items-center">
+                        <p class="text-red-500 line-through mr-2">2.1x</p>
+                        <p class="text-green-600 font-semibold">4.8x</p>
+                      </div>
+                    </div>
+                    <div>
+                      <p class="text-sm text-gray-500">Monthly Revenue</p>
+                      <div class="flex items-center">
+                        <p class="text-red-500 line-through mr-2">$42K</p>
+                        <p class="text-green-600 font-semibold">$96K</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center mt-6">
+                    <img
+                      src="https://public.readdy.ai/ai/img_res/d3dadc5fa085a2b906a3e5dc08f7d481.jpg"
+                      alt="Client"
+                      class="w-10 h-10 rounded-full object-cover"
+                    />
+                    <div class="ml-3">
+                      <p class="text-sm font-medium text-gray-900">
+                        Rebecca Anderson
+                      </p>
+                      <p class="text-xs text-gray-500">
+                        Marketing Director, Urban Style Co.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               Case Study 2 
+              <div
+                class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 w-full max-w-md"
+              >
+                <img
+                  src="https://public.readdy.ai/ai/img_res/84abab72233d5c836afd17379c0a56d1.jpg"
+                  alt="B2B Lead Generation Case Study"
+                  class="w-full h-56 object-cover object-top"
+                />
+                <div class="p-6">
+                  <div class="flex items-center mb-4">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded"
+                      >B2B</span
+                    >
+                    <span
+                      class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded ml-2"
+                      >SaaS</span
+                    >
+                  </div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                    B2B SaaS Lead Generation
+                  </h3>
+                  <p class="text-gray-600 mb-4">
+                    Created targeted lead generation campaigns for a B2B
+                    software company, utilizing custom audiences and lead form
+                    ads to capture qualified prospects.
+                  </p>
+                  <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <p class="text-sm text-gray-500">Cost Per Lead</p>
+                      <div class="flex items-center">
+                        <p class="text-red-500 line-through mr-2">$68</p>
+                        <p class="text-green-600 font-semibold">$27</p>
+                      </div>
+                    </div>
+                    <div>
+                      <p class="text-sm text-gray-500">Lead Quality</p>
+                      <div class="flex items-center">
+                        <p class="text-red-500 line-through mr-2">24%</p>
+                        <p class="text-green-600 font-semibold">52%</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center mt-6">
+                    <img
+                      src="https://public.readdy.ai/ai/img_res/f97007305c2249aeda991374b62d7d1c.jpg"
+                      alt="Client"
+                      class="w-10 h-10 rounded-full object-cover"
+                    />
+                    <div class="ml-3">
+                      <p class="text-sm font-medium text-gray-900">
+                        Daniel Harrington
+                      </p>
+                      <p class="text-xs text-gray-500">
+                        CMO, TechSphere Solutions
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               Case Study 3 
+              <div
+                class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 w-full max-w-md"
+              >
+                <img
+                  src="https://public.readdy.ai/ai/img_res/ab3c26822a9e12751a7c8914af45b0f0.jpg"
+                  alt="Local Restaurant Case Study"
+                  class="w-full h-56 object-cover object-top"
+                />
+                <div class="p-6">
+                  <div class="flex items-center mb-4">
+                    <span
+                      class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded"
+                      >Local</span
+                    >
+                    <span
+                      class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded ml-2"
+                      >Restaurant</span
+                    >
+                  </div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                    Local Restaurant Expansion
+                  </h3>
+                  <p class="text-gray-600 mb-4">
+                    Implemented location-based Meta advertising campaigns for a
+                    restaurant chain, driving foot traffic and online orders
+                    through targeted promotions.
+                  </p>
+                  <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <p class="text-sm text-gray-500">Foot Traffic</p>
+                      <div class="flex items-center">
+                        <p class="text-green-600 font-semibold">+42%</p>
+                      </div>
+                    </div>
+                    <div>
+                      <p class="text-sm text-gray-500">Online Orders</p>
+                      <div class="flex items-center">
+                        <p class="text-green-600 font-semibold">+68%</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center mt-6">
+                    <img
+                      src="https://public.readdy.ai/ai/img_res/94c3c74e51a0d7992034f0dd4eca813c.jpg"
+                      alt="Client"
+                      class="w-10 h-10 rounded-full object-cover"
+                    />
+                    <div class="ml-3">
+                      <p class="text-sm font-medium text-gray-900">
+                        Maria Rodriguez
+                      </p>
+                      <p class="text-xs text-gray-500">
+                        Owner, Flavor Fusion Restaurants
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           Slider Controls 
+          <div class="flex justify-center gap-2 mt-6">
+            <button
+              id="prevCase"
+              title="Previous case study"
+              class="w-10 h-10 flex items-center justify-center bg-white border border-gray-200 rounded-full text-gray-600 hover:bg-gray-50"
+            >
+              <i class="ri-arrow-left-s-line ri-lg"></i>
+            </button>
+            <button
+              id="nextCase"
+              title="Next case study"
+              class="w-10 h-10 flex items-center justify-center bg-white border border-gray-200 rounded-full text-gray-600 hover:bg-gray-50"
+            >
+              <i class="ri-arrow-right-s-line ri-lg"></i>
+            </button>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <a
+            href="#"
+            data-readdy="true"
+            class="bg-white text-primary border border-primary px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/5 transition-colors"
+          >
+            View All Case Studies
+          </a>
+        </div>
+      </div>
+    </section>
+                  end of case studies   -->
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Find answers to common questions about our Meta advertising
+            services.
+          </p>
+        </div>
+        <div class="max-w-3xl mx-auto">
+          <!-- Search Box -->
+          <div class="relative mb-12">
+            <input
+              type="text"
+              id="faqSearch"
+              placeholder="Search for questions..."
+              class="w-full px-4 py-3 pl-12 bg-white border border-gray-200 rounded text-gray-700 text-base placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            />
+            <div
+              class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400"
+            >
+              <i class="ri-search-line"></i>
+            </div>
+          </div>
+          <!-- FAQ Tabs -->
+          <div class="mb-8 flex justify-center">
+            <div class="inline-flex bg-gray-100 rounded-full p-1">
+              <button
+                class="tab-button active px-4 py-2 rounded-full text-sm font-medium transition-colors"
+                data-tab="general"
+              >
+                General
+              </button>
+              <button
+                class="tab-button px-4 py-2 rounded-full text-sm font-medium transition-colors"
+                data-tab="pricing"
+              >
+                Pricing
+              </button>
+              <button
+                class="tab-button px-4 py-2 rounded-full text-sm font-medium transition-colors"
+                data-tab="technical"
+              >
+                Technical
+              </button>
+            </div>
+          </div>
+          <!-- FAQ Accordions -->
+          <div class="tab-content active" id="general">
+            <div class="space-y-4">
+              <div
+                class="faq-accordion bg-white rounded-lg border border-gray-200 overflow-hidden"
+              >
+                <button
+                  class="faq-accordion-header w-full flex items-center justify-between p-5 text-left"
+                >
+                  <span class="text-lg font-medium text-gray-900"
+                    >What is Meta advertising?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center text-gray-500 faq-accordion-icon transition-transform"
+                  >
+                    <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                </button>
+                <div class="faq-accordion-content px-5 pb-5">
+                  <p class="text-gray-700">
+                    Meta advertising refers to paid promotional campaigns run
+                    across Meta's family of apps, including Facebook, Instagram,
+                    Messenger, and the Audience Network. These platforms offer
+                    sophisticated targeting options based on demographics,
+                    interests, behaviors, and more, allowing businesses to reach
+                    specific audiences with tailored messaging.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="faq-accordion bg-white rounded-lg border border-gray-200 overflow-hidden"
+              >
+                <button
+                  class="faq-accordion-header w-full flex items-center justify-between p-5 text-left"
+                >
+                  <span class="text-lg font-medium text-gray-900"
+                    >How long does it take to see results from Meta ads?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center text-gray-500 faq-accordion-icon transition-transform"
+                  >
+                    <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                </button>
+                <div class="faq-accordion-content px-5 pb-5">
+                  <p class="text-gray-700">
+                    Initial results can typically be seen within the first 2-4
+                    weeks as the campaigns gather data and our team makes
+                    optimizations. However, the most significant improvements
+                    usually occur after 1-3 months as we refine targeting,
+                    creative elements, and bidding strategies based on
+                    performance data. Long-term campaigns tend to perform better
+                    as they benefit from accumulated learnings and
+                    optimizations.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="faq-accordion bg-white rounded-lg border border-gray-200 overflow-hidden"
+              >
+                <button
+                  class="faq-accordion-header w-full flex items-center justify-between p-5 text-left"
+                >
+                  <span class="text-lg font-medium text-gray-900"
+                    >What types of businesses benefit most from Meta
+                    advertising?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center text-gray-500 faq-accordion-icon transition-transform"
+                  >
+                    <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                </button>
+                <div class="faq-accordion-content px-5 pb-5">
+                  <p class="text-gray-700">
+                    Businesses across virtually all industries can benefit from
+                    Meta advertising, from e-commerce and retail to professional
+                    services, B2B companies, local businesses, and more. The key
+                    is developing a strategy aligned with your specific business
+                    goals and target audience. Meta's extensive reach and
+                    targeting capabilities make it effective for both B2C and
+                    B2B marketing objectives, including brand awareness, lead
+                    generation, website traffic, and sales.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="faq-accordion bg-white rounded-lg border border-gray-200 overflow-hidden"
+              >
+                <button
+                  class="faq-accordion-header w-full flex items-center justify-between p-5 text-left"
+                >
+                  <span class="text-lg font-medium text-gray-900"
+                    >What ad formats do you offer?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center text-gray-500 faq-accordion-icon transition-transform"
+                  >
+                    <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                </button>
+                <div class="faq-accordion-content px-5 pb-5">
+                  <p class="text-gray-700">
+                    We create and manage all Meta ad formats, including image
+                    ads, video ads, carousel ads, collection ads, instant
+                    experience ads, stories ads, and more. Our team recommends
+                    the most effective formats based on your specific business
+                    goals, target audience, and creative assets. We can also
+                    develop custom creative assets tailored to each format to
+                    maximize engagement and conversions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content" id="pricing">
+            <div class="space-y-4">
+              <div
+                class="faq-accordion bg-white rounded-lg border border-gray-200 overflow-hidden"
+              >
+                <button
+                  class="faq-accordion-header w-full flex items-center justify-between p-5 text-left"
+                >
+                  <span class="text-lg font-medium text-gray-900"
+                    >What's included in your management fee?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center text-gray-500 faq-accordion-icon transition-transform"
+                  >
+                    <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                </button>
+                <div class="faq-accordion-content px-5 pb-5">
+                  <p class="text-gray-700">
+                    Our management fee covers strategy development, campaign
+                    setup, audience targeting, ad creation, ongoing
+                    optimization, performance monitoring, A/B testing, and
+                    regular reporting. It also includes account management,
+                    strategic guidance, and technical support. The ad spend (the
+                    money that goes directly to Meta for displaying your ads) is
+                    separate from our management fee and is paid directly to
+                    Meta through your advertising account.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="faq-accordion bg-white rounded-lg border border-gray-200 overflow-hidden"
+              >
+                <button
+                  class="faq-accordion-header w-full flex items-center justify-between p-5 text-left"
+                >
+                  <span class="text-lg font-medium text-gray-900"
+                    >Is there a minimum ad spend requirement?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center text-gray-500 faq-accordion-icon transition-transform"
+                  >
+                    <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                </button>
+                <div class="faq-accordion-content px-5 pb-5">
+                  <p class="text-gray-700">
+                    Yes, we recommend a minimum monthly ad spend of $1,500 to
+                    generate meaningful results. This allows for sufficient
+                    testing and optimization across different audiences and ad
+                    creatives. However, we can work with businesses at various
+                    stages and budgets, and we're happy to discuss your specific
+                    situation to find the most effective approach for your goals
+                    and resources.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="faq-accordion bg-white rounded-lg border border-gray-200 overflow-hidden"
+              >
+                <button
+                  class="faq-accordion-header w-full flex items-center justify-between p-5 text-left"
+                >
+                  <span class="text-lg font-medium text-gray-900"
+                    >Do you require long-term contracts?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center text-gray-500 faq-accordion-icon transition-transform"
+                  >
+                    <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                </button>
+                <div class="faq-accordion-content px-5 pb-5">
+                  <p class="text-gray-700">
+                    We typically recommend a minimum 3-month commitment to allow
+                    sufficient time for campaign optimization and to see
+                    meaningful results. However, we offer flexible terms and
+                    month-to-month options after the initial period. We're
+                    confident in the value we provide and don't believe in
+                    locking clients into lengthy contracts. Our average client
+                    relationship lasts over 18 months because of the results we
+                    deliver.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content" id="technical">
+            <div class="space-y-4">
+              <div
+                class="faq-accordion bg-white rounded-lg border border-gray-200 overflow-hidden"
+              >
+                <button
+                  class="faq-accordion-header w-full flex items-center justify-between p-5 text-left"
+                >
+                  <span class="text-lg font-medium text-gray-900"
+                    >How do you track and measure results?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center text-gray-500 faq-accordion-icon transition-transform"
+                  >
+                    <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                </button>
+                <div class="faq-accordion-content px-5 pb-5">
+                  <p class="text-gray-700">
+                    We implement comprehensive tracking using the Meta Pixel,
+                    Conversions API, and UTM parameters to accurately measure
+                    campaign performance. Our reporting includes key metrics
+                    such as impressions, reach, engagement, click-through rates,
+                    conversion rates, cost per acquisition, and return on ad
+                    spend. We also integrate with your analytics platforms (like
+                    Google Analytics) and CRM systems to track the full customer
+                    journey and attribute results accurately.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="faq-accordion bg-white rounded-lg border border-gray-200 overflow-hidden"
+              >
+                <button
+                  class="faq-accordion-header w-full flex items-center justify-between p-5 text-left"
+                >
+                  <span class="text-lg font-medium text-gray-900"
+                    >What targeting options do you use?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center text-gray-500 faq-accordion-icon transition-transform"
+                  >
+                    <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                </button>
+                <div class="faq-accordion-content px-5 pb-5">
+                  <p class="text-gray-700">
+                    We utilize Meta's full range of targeting options, including
+                    demographic targeting (age, gender, location, language),
+                    interest-based targeting, behavioral targeting, custom
+                    audiences (website visitors, customer lists, app users),
+                    lookalike audiences, and retargeting. Our approach combines
+                    these targeting methods strategically to reach the most
+                    relevant audiences at each stage of the customer journey,
+                    from awareness to consideration to conversion.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="faq-accordion bg-white rounded-lg border border-gray-200 overflow-hidden"
+              >
+                <button
+                  class="faq-accordion-header w-full flex items-center justify-between p-5 text-left"
+                >
+                  <span class="text-lg font-medium text-gray-900"
+                    >How do you handle privacy changes and iOS updates?</span
+                  >
+                  <div
+                    class="w-6 h-6 flex items-center justify-center text-gray-500 faq-accordion-icon transition-transform"
+                  >
+                    <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                </button>
+                <div class="faq-accordion-content px-5 pb-5">
+                  <p class="text-gray-700">
+                    We stay at the forefront of privacy changes and platform
+                    updates, implementing best practices to maintain campaign
+                    performance. This includes using Meta's Conversions API
+                    alongside the Meta Pixel for more reliable tracking,
+                    leveraging server-side tracking where appropriate, focusing
+                    on aggregated event measurement, and developing strategies
+                    that are less dependent on individual user tracking. We also
+                    emphasize first-party data collection and utilize Meta's
+                    AI-powered targeting capabilities to reach relevant
+                    audiences while respecting privacy preferences.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-12">
+            <p class="text-gray-600 mb-4">
+              Still have questions? We're here to help!
+            </p>
+            <a href="#contact" class="text-primary font-medium hover:underline"
+              >Contact our support team</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Call-to-Action Section -->
+    <section id="support" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div
+          class="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 md:p-12"
+        >
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Ready to Transform Your Meta Advertising?
+              </h2>
+              <p class="text-lg text-gray-700 mb-8">
+                Schedule a free consultation with our Meta advertising experts
+                and discover how our tailored strategies can help your business
+                reach its growth objectives.
+              </p>
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4"
+                  >
+                    <i class="ri-check-line ri-lg text-primary"></i>
+                  </div>
+                  <p class="text-gray-700">
+                    Custom strategy tailored to your specific business goals
+                  </p>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4"
+                  >
+                    <i class="ri-check-line ri-lg text-primary"></i>
+                  </div>
+                  <p class="text-gray-700">
+                    Transparent reporting with clear performance metrics
+                  </p>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4"
+                  >
+                    <i class="ri-check-line ri-lg text-primary"></i>
+                  </div>
+                  <p class="text-gray-700">
+                    No long-term contracts required after initial period
+                  </p>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4"
+                  >
+                    <i class="ri-check-line ri-lg text-primary"></i>
+                  </div>
+                  <p class="text-gray-700">
+                    30-day satisfaction guarantee on all services
+                  </p>
+                </div>
+                <a
+                  href="https://forms.gle/ppgFenWFkdwes1M88"
+                  target="_blank"
+                  rel="noopener"
+                  class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition-colors inline-block mt-6"
+                >
+                  Submit Info
+                </a>
+              </div>
+            </div>
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
+              <h3 class="text-xl font-semibold text-gray-900 mb-6">
+                Request Your Free Consultation
+              </h3>
+              <!-- Calendly inline widget begin -->
+              <div
+                class="calendly-inline-widget"
+                data-url="https://calendly.com/leadminnow"
+                style="min-width:320px;height:700px;"
+              ></div>
+              <script
+                type="text/javascript"
+                src="https://assets.calendly.com/assets/external/widget.js"
+                async
+              ></script>
+              <!-- Calendly inline widget end -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Related Services -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Related Services
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Explore our other digital marketing solutions to enhance your
+            business growth.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Animated Ad Creation -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-100"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center bg-green-50 rounded-full mb-6"
+            >
+              <i class="ri-movie-fill ri-2x text-secondary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Animated Ad Creation
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Eye-catching animated advertisements that capture attention and
+              drive engagement with your brand across all digital platforms.
+            </p>
+            <a
+              href="ads_making.html"
+              class="text-primary font-medium flex items-center hover:underline"
+            >
+              Learn More
+              <div class="w-5 h-5 flex items-center justify-center ml-1">
+                <i class="ri-arrow-right-line"></i>
+              </div>
+            </a>
+          </div>
+          <!-- AI-Chatbot Integration -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-100"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center bg-purple-50 rounded-full mb-6"
+            >
+              <i class="ri-robot-fill ri-2x text-purple-500"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              AI-Chatbot Integration
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Intelligent conversational AI solutions that enhance customer
+              service, qualify leads, and provide 24/7 support for your
+              business.
+            </p>
+            <a
+              href="AI-Chatbot.html"
+              class="text-primary font-medium flex items-center hover:underline"
+            >
+              Learn More
+              <div class="w-5 h-5 flex items-center justify-center ml-1">
+                <i class="ri-arrow-right-line"></i>
+              </div>
+            </a>
+          </div>
+          <!-- UI/UX Design Services -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-100"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center bg-orange-50 rounded-full mb-6"
+            >
+              <i class="ri-palette-fill ri-2x text-orange-500"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              UI/UX Design Services
+            </h3>
+            <p class="text-gray-600 mb-4">
+              User-centered design solutions that create intuitive, engaging
+              digital experiences to enhance customer satisfaction and
+              conversion rates.
+            </p>
+            <a
+              href="ads_making.html"
+              class="text-primary font-medium flex items-center hover:underline"
+            >
+              Learn More
+              <div class="w-5 h-5 flex items-center justify-center ml-1">
+                <i class="ri-arrow-right-line"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <a
+            href="index.html"
+            
+            class="bg-white text-primary border border-primary px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/5 transition-colors"
+          >
+            View All Services
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+          <div class="lg:col-span-2">
+            <div class="flex items-center">
+              <a href="index.html" class="flex items-center space-x-2">
+                <img src="Images/Main_logo.png" alt="LM Logo" class="h-10 w-auto" />
+              </a>
+            </div>
+            <p class="text-gray-400 mb-6 max-w-md">
+            </br>
+              Empowering businesses with innovative digital solutions to drive
+              growth, enhance customer engagement, and maximize ROI in today's
+              competitive marketplace.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                title="Facebook"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+              >
+                <i class="ri-twitter-x-fill"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/aadiverma/"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+              >
+              <i class="ri-linkedin-fill"></i>
+              <a
+                href="https://www.linkedin.com/company/leadminnow/about"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/leadminnow/"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Services</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="Facebook.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Digital Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Facebook.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Meta Ads</a
+                >
+              </li>
+              <li>
+                <a
+                  href="ads_making.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Animated Ads</a
+                >
+              </li>
+              <li>
+                <a
+                  href="AI-Chatbot.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >AI Chatbots</a
+                >
+              </li>
+              <li>
+                <a
+                  href="ads_making.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >UI/UX Design</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="AboutUs.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Case Studies</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Testimonials</a
+              
+              <li>
+                <a
+                  href="Contact_us.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Store Information</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2 mt-0.5"
+                >
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <span class="text-gray-400"
+                  >123 Demo-1, New York, NY 10001</span
+                >
+              </li>
+              <li class="flex items-center">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2"
+                >
+                  <i class="ri-phone-line"></i>
+                </div>
+                <span class="text-gray-400">+91 8085247210</span>
+              </li>
+              <li class="flex items-center">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2"
+                >
+                  <i class="ri-mail-line"></i>
+                </div>
+                <span class="text-gray-400">aaditya@leadminnow.com</span>
+              </li>
+              <li class="flex items-center">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2"
+                >
+                  <i class="ri-time-line"></i>
+                </div>
+                <span class="text-gray-400"
+                  >Mon-Fri: 8AM-9PM, Sat: 10AM-4PM</span
+                >
+              </li>
+            </ul>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  class="w-full px-4 py-2 bg-gray-800 border-none rounded-l text-white text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+                <button
+                  class="bg-primary text-white px-4 py-2 !rounded-r-button whitespace-nowrap font-medium hover:bg-primary/90 transition-colors"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-500 text-sm mb-4 md:mb-0">
+            © 2025 LeadMinnow. All rights reserved.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              href="#"
+              class="text-gray-500 text-sm hover:text-white transition-colors"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-gray-500 text-sm hover:text-white transition-colors"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              class="text-gray-500 text-sm hover:text-white transition-colors"
+              >Cookie Policy</a
+            >
+          </div>
+          <div class="flex items-center mt-4 md:mt-0">
+            <span class="text-gray-500 text-sm mr-4">Payment Methods:</span>
+            <div class="flex space-x-3">
+              <div
+                class="w-8 h-8 flex items-center justify-center text-gray-400"
+              >
+                <i class="ri-visa-fill ri-lg"></i>
+              </div>
+              <div
+                class="w-8 h-8 flex items-center justify-center text-gray-400"
+              >
+                <i class="ri-mastercard-fill ri-lg"></i>
+              </div>
+              <div
+                class="w-8 h-8 flex items-center justify-center text-gray-400"
+              >
+                <i class="ri-paypal-fill ri-lg"></i>
+              </div>
+              <div
+                class="w-8 h-8 flex items-center justify-center text-gray-400"
+              >
+                <i class="ri-apple-fill ri-lg"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Add chatbot scripts -->
+    <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/04/18/15/20250418150249-PM36R8KH.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle consultation form functionality
+            const toggleButton = document.getElementById('toggleFormBtn');
+            const toggleBtnText = document.getElementById('toggleBtnText');
+            const calendlyWidget = document.getElementById('calendlyWidget');
+            const contactForm = document.getElementById('contactForm');
+            
+            if (toggleButton && calendlyWidget && contactForm) {
+                toggleButton.addEventListener('click', function() {
+                    // Toggle visibility of widgets
+                    calendlyWidget.classList.toggle('hidden');
+                    contactForm.classList.toggle('hidden');
+                    
+                    // Update button text
+                    if (calendlyWidget.classList.contains('hidden')) {
+                        toggleBtnText.textContent = 'Book a Call';
+                    } else {
+                        toggleBtnText.textContent = 'Submit Info';
+                    }
+                });
+            }
+
+            // FAQ Accordion Functionality
+            const faqButtons = document.querySelectorAll('.faq-accordion-header');
+            
+            faqButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const accordion = this.parentElement;
+                    accordion.classList.toggle('active');
+                    
+                    // Close other open accordions
+                    faqButtons.forEach(otherButton => {
+                        if (otherButton !== this) {
+                            otherButton.parentElement.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
+            // Tab Functionality
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    this.classList.add('active');
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+    </script>
+    <!-- Add formHandler.js before closing body tag -->
+    <script src="formHandler.js"></script>
+  </body>
+</html>
