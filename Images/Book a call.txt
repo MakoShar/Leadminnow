@@ -1,0 +1,13 @@
+<!-- Calendly Widget Shown by Default -->
+              <div id="book-call-widget" class="block">
+                <div
+                  class="calendly-inline-widget"
+                  data-url="https://calendly.com/leadminnow"
+                  style="min-width:320px;height:630px;"
+                ></div>
+                <script
+                  type="text/javascript"
+                  src="https://assets.calendly.com/assets/external/widget.js"
+                  async
+                ></script>
+              </div>
