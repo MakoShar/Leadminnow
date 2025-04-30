@@ -364,6 +364,33 @@
                     </div>
                 </div>
                 
+
+                <!-- Item 9 -->
+                <div class="relative overflow-hidden rounded-lg shadow-md hover-card group cursor-pointer" data-category="video" onclick="openVideoModal_4()">
+                  <img src="Images/3D_Interior.png" alt="Sports Apparel Video" class="w-full h-full object-cover object-top">
+                  <div class="hover-content absolute inset-0 bg-black bg-opacity-70 opacity-0 transition-opacity flex flex-col justify-end p-6 text-white">
+                      <div class="absolute inset-0 flex items-center justify-center">
+                          <i class="ri-play-circle-fill text-6xl text-white opacity-80"></i>
+                      </div>
+                      <h3 class="text-xl font-semibold">3D Interior Designing</h3>
+                      <p class="text-sm mb-2">animation</p>
+                      <span class="text-xs text-primary">paid</span>
+                  </div>
+              </div>
+              
+              <!-- Video Modal -->
+              <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center">
+                  <div class="relative w-full max-w-4xl mx-4">
+                      <button onclick="closeVideoModal_4()" class="absolute -top-10 right-0 text-white hover:text-gray-300" aria-label="Close video">
+                          <i class="ri-close-line text-3xl"></i>
+                      </button>
+                      <video id="videoPlayer" controls class="w-full rounded-lg">
+                          <source src="Videos/3D_Interior.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                      </video>
+                  </div>
+              </div>
+
             </div>
         </div>
     </section>
@@ -1284,7 +1311,23 @@
             video.play();
         }
 
+        function openVideoModal_4() {
+            const modal = document.getElementById('videoModal');
+            const video = document.getElementById('videoPlayer');
+            modal.classList.remove('hidden');
+            video.src = 'Videos/3D_Interior.mp4';
+            video.load();
+            video.play();
+        }
+
         function closeVideoModal_3() {
+            const modal = document.getElementById('videoModal');
+            const video = document.getElementById('videoPlayer');
+            modal.classList.add('hidden');
+            video.pause();
+            video.currentTime = 0;
+        }
+        function closeVideoModal_4() {
             const modal = document.getElementById('videoModal');
             const video = document.getElementById('videoPlayer');
             modal.classList.add('hidden');
@@ -1297,6 +1340,7 @@
                 closeVideoModal_1();
                 closeVideoModal_2();
                 closeVideoModal_3();
+                closeVideoModal_4();
             }
         });
     </script>
