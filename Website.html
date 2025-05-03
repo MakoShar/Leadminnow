@@ -3,23 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template Gallery - Choose Your Perfect Design</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <title>Leadminnow</title>
+    <link rel="icon" href="Images/Main_logo.png" type="image/png" />
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
-            colors: { primary: "#3b82f6", secondary: "#64748b" },
+            colors: { primary: "#4f46e5", secondary: "#10b981" },
             borderRadius: {
               none: "0px",
               sm: "4px",
@@ -36,997 +27,892 @@
         },
       };
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
     <style>
       :where([class^="ri-"])::before { content: "\f3c2"; }
       body {
-          font-family: 'Inter', sans-serif;
+      font-family: 'Inter', sans-serif;
       }
-      .template-card:hover .template-overlay {
-          opacity: 1;
+      .hero-section {
+      background-color: white;
+      background-image: url('Images/Website.png');
+      background-size: cover;
+      background-position: center;
+      }
+      .process-item::before {
+      content: '';
+      position: absolute;
+      top: 2.5rem;
+      left: 1.5rem;
+      width: 1px;
+      height: calc(100% - 2.5rem);
+      background-color: #e5e7eb;
+      z-index: -1;
+      }
+      .process-item:last-child::before {
+      display: none;
+      }
+      .cta-section {
+      background-image: url('https://readdy.ai/api/search-image?query=subtle%20abstract%20pattern%20with%20light%20blue%20and%20purple%20gradient%2C%20professional%20tech%20background%20with%20flowing%20lines%2C%20minimalist%20design%2C%20perfect%20for%20call%20to%20action%20section%2C%20very%20light%20and%20airy%20feeling%2C%20not%20distracting%20from%20text&width=1920&height=400&seq=12346&orientation=landscape');
+      background-size: cover;
+      background-position: center;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+      }
+      .custom-checkbox {
+      position: relative;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #d1d5db;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      }
+      .custom-checkbox.checked {
+      background-color: #4f46e5;
+      border-color: #4f46e5;
+      }
+      .custom-checkbox.checked::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 6px;
+      width: 6px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      }
+      .custom-switch {
+      position: relative;
+      display: inline-block;
+      width: 48px;
+      height: 24px;
+      }
+      .custom-switch-track {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #e5e7eb;
+      border-radius: 24px;
+      transition: 0.4s;
+      }
+      .custom-switch-thumb {
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.4s;
+      }
+      .custom-switch.active .custom-switch-track {
+      background-color: #4f46e5;
+      }
+      .custom-switch.active .custom-switch-thumb {
+      transform: translateX(24px);
+      }
+      .testimonial-slider {
+      transition: transform 0.5s ease;
+      }
+      .service-card:hover {
+      transform: translateY(-8px);
+      }
+      .portfolio-card:hover .portfolio-overlay {
+      opacity: 1;
       }
     </style>
   </head>
   <body class="bg-white">
-   <!-- Header -->
-   <header class="w-full bg-white shadow-sm">
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-        <div class="flex items-center">
-            <a href="index.html" class="flex items-center space-x-2">
-              <img src="Images/Main_logo.png" alt="LM Logo" class="h-10 w-auto" />
-            </a>
-          </div>
-    <nav class="hidden md:flex items-center space-x-8">
-    <div class="relative group">
-    <button class="text-gray-700 hover:text-primary font-medium flex items-center">
-    Services
-    <span class="ml-1 w-5 h-5 flex items-center justify-center">
-    <i class="ri-arrow-down-s-line"></i>
-    </span>
-    </button>
-    <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-    <a href="AI-Chatbot.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">AI Chatbots</a>
-    <a href="Facebook.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Meta Ads</a>
-    <a href="ads_making.html" class="block px-4 py-2 text-sm text-primary font-medium hover:bg-gray-50">Animated Ads</a>
-    <a href="ads_making.html" class="block px-4 py-2 text-sm text-primary font-medium hover:bg-gray-50">UI/UX Design</a>
-    </div>
-    </div>
-    <a href="AboutUs.html" class="text-gray-700 hover:text-primary font-medium">About Us</a>
-    <a href="Contact_us.html" class="text-gray-700 hover:text-primary font-medium">Contact Us</a>
-    </nav>
-    <div class="flex items-center space-x-4">
-    <div class="relative">
-    <button class="flex items-center text-gray-700 hover:text-primary">
-    EN
-    <span class="ml-1 w-5 h-5 flex items-center justify-center">
-    <i class="ri-arrow-down-s-line"></i>
-    </span>
-    </button>
-    <div class="absolute right-0 mt-2 w-24 bg-white shadow-lg rounded hidden">
-    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">EN</a>
-    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">FR</a>
-    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">DE</a>
-    </div>
-    </div>
-    <button class="bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap hover:bg-blue-600 transition-colors">Get Started</button>
-    </div>
-    </div>
-    </header>
-        <!-- Breadcrumb -->
-        <div class="bg-gray-50 py-3 border-b border-gray-200">
-            <div class="container mx-auto px-6">
-              <div class="flex items-center text-sm text-gray-600">
-                <a href="index.html" class="hover:text-primary">Home</a>
-                <span class="mx-2">/</span>
-                <a
-                  href="index.html"
-                  data-readdy="true"
-                  class="hover:text-primary"
-                  >Services</a
-                >
-                <span class="mx-2">/</span>
-                <a
-                 href="ads_making.html"
-                 data-readdy="true"
-                 class="hover:text-primary"
-                >Ads and UI/UX Design</a
-                 >
-                <span class="mx-2">/</span>
-                <span class="text-primary font-medium">Website Templates</span>
-              </div>
-            </div>
-          </div>
+    <!-- SECTION: Header/Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-4 flex items-center justify-between"
+      >
+      <!-- Logo and Title -->
+      <div class="flex items-center">
+        <a href="index.html" class="flex items-center space-x-2">
+          <img src="Images/Main_logo.png" alt="LM Logo" class="h-10 w-auto" />
+        </a>
+      </div>
       
-
+      
+      <!-- Mobile Menu Toggle Button -->
+        <nav class="hidden lg:flex items-center space-x-8">
+          <a
+            href="#services"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >Services</a
+          >
+          <a
+            href="#solutions"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >Solutions</a
+          >
+          <a
+            href="AboutUs.html"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >About Us</a
+          >
+          <a
+            href="Contact_us.html"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >Contact Us</a
+          >
+        </nav>
+        <div class="flex items-center space-x-4">
+          <div
+            class="hidden md:flex items-center border border-gray-200 rounded px-2 py-1"
+          >
+            <span class="text-gray-600 text-sm">EN</span>
+            <div class="w-6 h-6 flex items-center justify-center text-gray-500">
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+          </div>
+          <a
+            href="#contact"
+            class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition-colors"
+            >Get Started</a
+          >
+          <button
+            type="button"
+            title="Open mobile menu"
+            class="lg:hidden w-10 h-10 flex items-center justify-center text-gray-700"
+          >
+            <i class="ri-menu-line ri-lg"></i>
+          </button>
+        </div>
+      </div>
+    </header>
     <!-- Hero Section -->
-    <section class="py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
-      <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto text-center mb-12">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Find Your Perfect Website Template
+    <section class="hero-section min-h-[700px] flex items-center pt-24 pb-16 relative bg-white">
+      <div class="container mx-auto px-4 relative">
+        <div class="w-full max-w-3xl">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
+            Transform Your Business with Professional Web Solutions
           </h1>
-          <p class="text-lg text-gray-600 mb-8">
-            Browse our collection of professionally designed templates for any
-            industry. Easy to customize, responsive, and ready to launch.
+          <p class="text-lg md:text-xl mb-8 text-white max-w-2xl">
+            We craft stunning, high-performance websites that elevate your
+            brand, engage your audience, and drive business growth. Your vision,
+            our expertise.
           </p>
-          <div class="flex flex-wrap justify-center gap-4">
+          <div class="flex flex-col sm:flex-row gap-4">
             <button
-              class="bg-primary text-white px-6 py-3 rounded-button hover:bg-blue-600 transition-colors whitespace-nowrap"
+              class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-primary/90 transition"
             >
-              Explore Templates
+              Start Your Project
             </button>
             <button
-              class="bg-white text-gray-700 px-6 py-3 rounded-button border border-gray-200 hover:bg-gray-50 transition-colors whitespace-nowrap"
+              class="bg-gray-100 text-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-gray-200 transition"
             >
-              How It Works
+              View Our Work
             </button>
           </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-          <div
-            class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 transition-transform duration-300"
-          >
+          <div class="flex items-center mt-12 gap-6">
             <div
-              class="h-48 bg-gray-200"
-              style="background-image: url('https://public.readdy.ai/ai/img_res/3d4e2c77d5f820677ea7766d1f08b425.jpg'); background-size: cover; background-position: center;"
-            ></div>
-            <div class="p-6">
-              <span
-                class="text-xs font-semibold text-primary uppercase tracking-wider"
-                >Featured</span
-              >
-              <h3 class="text-xl font-bold mt-2">Business Pro</h3>
-              <p class="text-gray-600 mt-2">
-                Professional template for corporate and business websites.
-              </p>
+              class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full"
+            >
+              <i class="ri-html5-fill text-primary"></i>
             </div>
-          </div>
-
-          <div
-            class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 transition-transform duration-300"
-          >
             <div
-              class="h-48 bg-gray-200"
-              style="background-image: url('https://public.readdy.ai/ai/img_res/b9fe2b5bc234fa41ccb05f81cefa84d6.jpg'); background-size: cover; background-position: center;"
-            ></div>
-            <div class="p-6">
-              <span
-                class="text-xs font-semibold text-primary uppercase tracking-wider"
-                >Popular</span
-              >
-              <h3 class="text-xl font-bold mt-2">Shop Master</h3>
-              <p class="text-gray-600 mt-2">
-                Complete e-commerce solution with product management.
-              </p>
+              class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full"
+            >
+              <i class="ri-css3-fill text-primary"></i>
             </div>
-          </div>
-
-          <div
-            class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 transition-transform duration-300"
-          >
             <div
-              class="h-48 bg-gray-200"
-              style="background-image: url('https://public.readdy.ai/ai/img_res/b583a45428a412732837a8f5e24469a3.jpg'); background-size: cover; background-position: center;"
-            ></div>
-            <div class="p-6">
-              <span
-                class="text-xs font-semibold text-primary uppercase tracking-wider"
-                >New</span
-              >
-              <h3 class="text-xl font-bold mt-2">Portfolio Plus</h3>
-              <p class="text-gray-600 mt-2">
-                Showcase your work with this elegant portfolio template.
-              </p>
+              class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full"
+            >
+              <i class="ri-javascript-fill text-primary"></i>
+            </div>
+            <div
+              class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full"
+            >
+              <i class="ri-database-2-fill text-primary"></i>
+            </div>
+            <div
+              class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full"
+            >
+              <i class="ri-nodejs-fill text-primary"></i>
+            </div>
+            <div
+              class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full"
+            >
+              <i class="ri-reactjs-fill text-primary"></i>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Filter Section -->
-    <section class="py-12 bg-white">
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
       <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row gap-6 items-start">
-          <!-- Filter Sidebar -->
-          <div class="w-full md:w-1/4 bg-gray-50 rounded-lg p-6">
-            <h3 class="text-lg font-semibold mb-4">Filter Templates</h3>
-
-            <div class="mb-6">
-              <h4 class="text-sm font-medium text-gray-700 mb-2">Categories</h4>
-              <div class="space-y-2">
-                <label class="flex items-center">
-                  <div
-                    class="w-5 h-5 flex items-center justify-center mr-2 rounded border border-gray-300 bg-white"
-                  >
-                    <div class="w-3 h-3 bg-primary rounded-sm hidden"></div>
-                  </div>
-                  <input type="checkbox" class="hidden" />
-                  <span class="text-gray-600">Business (24)</span>
-                </label>
-                <label class="flex items-center">
-                  <div
-                    class="w-5 h-5 flex items-center justify-center mr-2 rounded border border-gray-300 bg-white"
-                  >
-                    <div class="w-3 h-3 bg-primary rounded-sm"></div>
-                  </div>
-                  <input type="checkbox" class="hidden" checked />
-                  <span class="text-gray-800">E-commerce (18)</span>
-                </label>
-                <label class="flex items-center">
-                  <div
-                    class="w-5 h-5 flex items-center justify-center mr-2 rounded border border-gray-300 bg-white"
-                  >
-                    <div class="w-3 h-3 bg-primary rounded-sm hidden"></div>
-                  </div>
-                  <input type="checkbox" class="hidden" />
-                  <span class="text-gray-600">Portfolio (15)</span>
-                </label>
-                <label class="flex items-center">
-                  <div
-                    class="w-5 h-5 flex items-center justify-center mr-2 rounded border border-gray-300 bg-white"
-                  >
-                    <div class="w-3 h-3 bg-primary rounded-sm hidden"></div>
-                  </div>
-                  <input type="checkbox" class="hidden" />
-                  <span class="text-gray-600">Blog (12)</span>
-                </label>
-                <label class="flex items-center">
-                  <div
-                    class="w-5 h-5 flex items-center justify-center mr-2 rounded border border-gray-300 bg-white"
-                  >
-                    <div class="w-3 h-3 bg-primary rounded-sm hidden"></div>
-                  </div>
-                  <input type="checkbox" class="hidden" />
-                  <span class="text-gray-600">Landing Page (9)</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="mb-6">
-              <h4 class="text-sm font-medium text-gray-700 mb-2">Features</h4>
-              <div class="space-y-2">
-                <label class="flex items-center">
-                  <div
-                    class="w-5 h-5 flex items-center justify-center mr-2 rounded border border-gray-300 bg-white"
-                  >
-                    <div class="w-3 h-3 bg-primary rounded-sm"></div>
-                  </div>
-                  <input type="checkbox" class="hidden" checked />
-                  <span class="text-gray-800">Responsive Design</span>
-                </label>
-                <label class="flex items-center">
-                  <div
-                    class="w-5 h-5 flex items-center justify-center mr-2 rounded border border-gray-300 bg-white"
-                  >
-                    <div class="w-3 h-3 bg-primary rounded-sm hidden"></div>
-                  </div>
-                  <input type="checkbox" class="hidden" />
-                  <span class="text-gray-600">Blog Section</span>
-                </label>
-                <label class="flex items-center">
-                  <div
-                    class="w-5 h-5 flex items-center justify-center mr-2 rounded border border-gray-300 bg-white"
-                  >
-                    <div class="w-3 h-3 bg-primary rounded-sm"></div>
-                  </div>
-                  <input type="checkbox" class="hidden" checked />
-                  <span class="text-gray-800">Contact Form</span>
-                </label>
-                <label class="flex items-center">
-                  <div
-                    class="w-5 h-5 flex items-center justify-center mr-2 rounded border border-gray-300 bg-white"
-                  >
-                    <div class="w-3 h-3 bg-primary rounded-sm hidden"></div>
-                  </div>
-                  <input type="checkbox" class="hidden" />
-                  <span class="text-gray-600">Gallery</span>
-                </label>
-              </div>
-            </div>
-
-            <div>
-              <h4 class="text-sm font-medium text-gray-700 mb-2">Price</h4>
-              <div class="relative pt-5 pb-6">
-                <div class="h-1 bg-gray-200 rounded-full">
-                  <div
-                    class="absolute h-1 bg-primary rounded-full"
-                    style="width: 60%; left: 20%"
-                  ></div>
-                  <div
-                    class="absolute w-5 h-5 bg-white border-2 border-primary rounded-full -mt-2 -ml-2.5"
-                    style="left: 20%"
-                  ></div>
-                  <div
-                    class="absolute w-5 h-5 bg-white border-2 border-primary rounded-full -mt-2 -ml-2.5"
-                    style="left: 80%"
-                  ></div>
-                </div>
-                <div class="flex justify-between mt-4 text-sm text-gray-600">
-                  <span>$0</span>
-                  <span>$49</span>
-                  <span>$99+</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-6 flex gap-3">
-              <button
-                class="bg-primary text-white px-4 py-2 rounded-button hover:bg-blue-600 transition-colors whitespace-nowrap"
-              >
-                Apply Filters
-              </button>
-              <button
-                class="text-gray-600 px-4 py-2 rounded-button border border-gray-200 hover:bg-gray-50 transition-colors whitespace-nowrap"
-              >
-                Reset
-              </button>
-            </div>
-          </div>
-
-          <!-- Template Gallery -->
-          <div class="w-full md:w-3/4">
-            <div class="flex justify-between items-center mb-6">
-              <h2 class="text-2xl font-bold text-gray-800">
-                E-commerce Templates
-              </h2>
-              <div class="flex items-center">
-                <span class="text-sm text-gray-600 mr-2">Sort by:</span>
-                <div class="relative">
-                  <select
-                    class="appearance-none bg-white border border-gray-200 rounded px-4 py-2 pr-8 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
-                    title="Sort Templates"
-                  >
-                    <option>Popularity</option>
-                    <option>Newest</option>
-                    <option>Price: Low to High</option>
-                    <option>Price: High to Low</option>
-                  </select>
-                  <div
-                    class="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none w-4 h-4 flex items-center justify-center"
-                  >
-                    <i class="ri-arrow-down-s-line"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <!-- Template Card 1 -->
-              <div
-                class="template-card group relative bg-white rounded-lg shadow-md overflow-hidden"
-              >
-                <div class="relative h-48 overflow-hidden">
-                  <img
-                    src="https://public.readdy.ai/ai/img_res/27dbbd4e3c75e2acf5eeeecfa651752d.jpg"
-                    alt="E-commerce Template"
-                    class="w-full h-full object-cover object-top"
-                  />
-                  <div
-                    class="template-overlay absolute inset-0 bg-black bg-opacity-70 opacity-0 transition-opacity flex items-center justify-center gap-3"
-                  >
-                    <button
-                      class="bg-white text-gray-800 px-3 py-2 rounded-button text-sm hover:bg-gray-100 transition-colors whitespace-nowrap"
-                    >
-                      Live Preview
-                    </button>
-                    <button
-                      class="bg-primary text-white px-3 py-2 rounded-button text-sm hover:bg-blue-600 transition-colors whitespace-nowrap"
-                    >
-                      Choose Template
-                    </button>
-                  </div>
-                </div>
-                <div class="p-4">
-                  <div class="flex justify-between items-center mb-2">
-                    <h3 class="font-semibold text-gray-800">ShopElite</h3>
-                    <span class="text-primary font-medium">$49</span>
-                  </div>
-                  <p class="text-sm text-gray-600">
-                    Complete e-commerce solution with product filtering and
-                    cart.
-                  </p>
-                  <div class="flex items-center mt-3">
-                    <div class="flex">
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-half-fill text-yellow-400"></i>
-                    </div>
-                    <span class="text-xs text-gray-500 ml-1">(48)</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Template Card 2 -->
-              <div
-                class="template-card group relative bg-white rounded-lg shadow-md overflow-hidden"
-              >
-                <div class="relative h-48 overflow-hidden">
-                  <img
-                    src="https://public.readdy.ai/ai/img_res/8bba913c2f6f5f7a1a316a433d97f435.jpg"
-                    alt="Fashion E-commerce Template"
-                    class="w-full h-full object-cover object-top"
-                  />
-                  <div
-                    class="template-overlay absolute inset-0 bg-black bg-opacity-70 opacity-0 transition-opacity flex items-center justify-center gap-3"
-                  >
-                    <button
-                      class="bg-white text-gray-800 px-3 py-2 rounded-button text-sm hover:bg-gray-100 transition-colors whitespace-nowrap"
-                    >
-                      Live Preview
-                    </button>
-                    <button
-                      class="bg-primary text-white px-3 py-2 rounded-button text-sm hover:bg-blue-600 transition-colors whitespace-nowrap"
-                    >
-                      Choose Template
-                    </button>
-                  </div>
-                </div>
-                <div class="p-4">
-                  <div class="flex justify-between items-center mb-2">
-                    <h3 class="font-semibold text-gray-800">FashionCart</h3>
-                    <span class="text-primary font-medium">$59</span>
-                  </div>
-                  <p class="text-sm text-gray-600">
-                    Fashion-focused e-commerce with size guides and lookbooks.
-                  </p>
-                  <div class="flex items-center mt-3">
-                    <div class="flex">
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-line text-yellow-400"></i>
-                    </div>
-                    <span class="text-xs text-gray-500 ml-1">(36)</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Template Card 3 -->
-              <div
-                class="template-card group relative bg-white rounded-lg shadow-md overflow-hidden"
-              >
-                <div class="relative h-48 overflow-hidden">
-                  <img
-                    src="https://public.readdy.ai/ai/img_res/6f2a9162e5fd68bf921b347222e83139.jpg"
-                    alt="Digital Marketplace Template"
-                    class="w-full h-full object-cover object-top"
-                  />
-                  <div
-                    class="template-overlay absolute inset-0 bg-black bg-opacity-70 opacity-0 transition-opacity flex items-center justify-center gap-3"
-                  >
-                    <button
-                      class="bg-white text-gray-800 px-3 py-2 rounded-button text-sm hover:bg-gray-100 transition-colors whitespace-nowrap"
-                    >
-                      Live Preview
-                    </button>
-                    <button
-                      class="bg-primary text-white px-3 py-2 rounded-button text-sm hover:bg-blue-600 transition-colors whitespace-nowrap"
-                    >
-                      Choose Template
-                    </button>
-                  </div>
-                </div>
-                <div class="p-4">
-                  <div class="flex justify-between items-center mb-2">
-                    <h3 class="font-semibold text-gray-800">DigitalMarket</h3>
-                    <span class="text-primary font-medium">$69</span>
-                  </div>
-                  <p class="text-sm text-gray-600">
-                    Sell digital products with secure download management.
-                  </p>
-                  <div class="flex items-center mt-3">
-                    <div class="flex">
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-fill text-yellow-400"></i>
-                    </div>
-                    <span class="text-xs text-gray-500 ml-1">(52)</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Template Card 4 -->
-              <div
-                class="template-card group relative bg-white rounded-lg shadow-md overflow-hidden"
-              >
-                <div class="relative h-48 overflow-hidden">
-                  <img
-                    src="https://public.readdy.ai/ai/img_res/4a39ccd1f59397f600c6fad0cc4ad867.jpg"
-                    alt="Food Delivery Template"
-                    class="w-full h-full object-cover object-top"
-                  />
-                  <div
-                    class="template-overlay absolute inset-0 bg-black bg-opacity-70 opacity-0 transition-opacity flex items-center justify-center gap-3"
-                  >
-                    <button
-                      class="bg-white text-gray-800 px-3 py-2 rounded-button text-sm hover:bg-gray-100 transition-colors whitespace-nowrap"
-                    >
-                      Live Preview
-                    </button>
-                    <button
-                      class="bg-primary text-white px-3 py-2 rounded-button text-sm hover:bg-blue-600 transition-colors whitespace-nowrap"
-                    >
-                      Choose Template
-                    </button>
-                  </div>
-                </div>
-                <div class="p-4">
-                  <div class="flex justify-between items-center mb-2">
-                    <h3 class="font-semibold text-gray-800">FoodOrder</h3>
-                    <span class="text-primary font-medium">$79</span>
-                  </div>
-                  <p class="text-sm text-gray-600">
-                    Restaurant ordering system with menu management.
-                  </p>
-                  <div class="flex items-center mt-3">
-                    <div class="flex">
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-half-fill text-yellow-400"></i>
-                    </div>
-                    <span class="text-xs text-gray-500 ml-1">(41)</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Template Card 5 -->
-              <div
-                class="template-card group relative bg-white rounded-lg shadow-md overflow-hidden"
-              >
-                <div class="relative h-48 overflow-hidden">
-                  <img
-                    src="https://public.readdy.ai/ai/img_res/362faed8398f99e692fa166addbcd0e4.jpg"
-                    alt="Subscription Box Template"
-                    class="w-full h-full object-cover object-top"
-                  />
-                  <div
-                    class="template-overlay absolute inset-0 bg-black bg-opacity-70 opacity-0 transition-opacity flex items-center justify-center gap-3"
-                  >
-                    <button
-                      class="bg-white text-gray-800 px-3 py-2 rounded-button text-sm hover:bg-gray-100 transition-colors whitespace-nowrap"
-                    >
-                      Live Preview
-                    </button>
-                    <button
-                      class="bg-primary text-white px-3 py-2 rounded-button text-sm hover:bg-blue-600 transition-colors whitespace-nowrap"
-                    >
-                      Choose Template
-                    </button>
-                  </div>
-                </div>
-                <div class="p-4">
-                  <div class="flex justify-between items-center mb-2">
-                    <h3 class="font-semibold text-gray-800">SubBox</h3>
-                    <span class="text-primary font-medium">$59</span>
-                  </div>
-                  <p class="text-sm text-gray-600">
-                    Subscription box service with recurring billing options.
-                  </p>
-                  <div class="flex items-center mt-3">
-                    <div class="flex">
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-line text-yellow-400"></i>
-                    </div>
-                    <span class="text-xs text-gray-500 ml-1">(29)</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Template Card 6 -->
-              <div
-                class="template-card group relative bg-white rounded-lg shadow-md overflow-hidden"
-              >
-                <div class="relative h-48 overflow-hidden">
-                  <img
-                    src="https://public.readdy.ai/ai/img_res/812f609845ece3e0dbfc73b28c2337a5.jpg"
-                    alt="Handmade Marketplace Template"
-                    class="w-full h-full object-cover object-top"
-                  />
-                  <div
-                    class="template-overlay absolute inset-0 bg-black bg-opacity-70 opacity-0 transition-opacity flex items-center justify-center gap-3"
-                  >
-                    <button
-                      class="bg-white text-gray-800 px-3 py-2 rounded-button text-sm hover:bg-gray-100 transition-colors whitespace-nowrap"
-                    >
-                      Live Preview
-                    </button>
-                    <button
-                      class="bg-primary text-white px-3 py-2 rounded-button text-sm hover:bg-blue-600 transition-colors whitespace-nowrap"
-                    >
-                      Choose Template
-                    </button>
-                  </div>
-                </div>
-                <div class="p-4">
-                  <div class="flex justify-between items-center mb-2">
-                    <h3 class="font-semibold text-gray-800">CraftMarket</h3>
-                    <span class="text-green-600 font-medium">Free</span>
-                  </div>
-                  <p class="text-sm text-gray-600">
-                    Marketplace for handmade products with seller profiles.
-                  </p>
-                  <div class="flex items-center mt-3">
-                    <div class="flex">
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-fill text-yellow-400"></i>
-                      <i class="ri-star-half-fill text-yellow-400"></i>
-                      <i class="ri-star-line text-yellow-400"></i>
-                    </div>
-                    <span class="text-xs text-gray-500 ml-1">(63)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Pagination -->
-            <div class="mt-10 flex justify-center">
-              <nav class="flex items-center">
-                <a
-                  href="#"
-                  class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:border-primary hover:text-primary"
-                >
-                  <i class="ri-arrow-left-s-line"></i>
-                </a>
-                <a
-                  href="#"
-                  class="w-10 h-10 flex items-center justify-center rounded-full mx-1 bg-primary text-white"
-                  >1</a
-                >
-                <a
-                  href="#"
-                  class="w-10 h-10 flex items-center justify-center rounded-full mx-1 text-gray-700 hover:bg-gray-100"
-                  >2</a
-                >
-                <a
-                  href="#"
-                  class="w-10 h-10 flex items-center justify-center rounded-full mx-1 text-gray-700 hover:bg-gray-100"
-                  >3</a
-                >
-                <span class="mx-1 text-gray-500">...</span>
-                <a
-                  href="#"
-                  class="w-10 h-10 flex items-center justify-center rounded-full mx-1 text-gray-700 hover:bg-gray-100"
-                  >8</a
-                >
-                <a
-                  href="#"
-                  class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:border-primary hover:text-primary"
-                >
-                  <i class="ri-arrow-right-s-line"></i>
-                </a>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="py-16 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto text-center mb-12">
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">
-            Why Choose Our Templates
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Our Expert Services
           </h2>
-          <p class="text-gray-600">
-            Our professionally designed templates come with everything you need
-            to launch a successful website quickly.
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            We offer comprehensive web development solutions tailored to your
+            unique business needs.
           </p>
         </div>
-
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 ease-in-out"
+          >
             <div
-              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+              class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-lg mb-6"
             >
-              <i class="ri-device-line text-primary ri-2x"></i>
+              <i class="ri-code-s-slash-line ri-xl text-primary"></i>
             </div>
-            <h3 class="text-xl font-semibold mb-3">Responsive Design</h3>
-            <p class="text-gray-600">
-              All templates are fully responsive and look great on any device -
-              desktop, tablet, or mobile.
+            <h3 class="text-xl font-semibold mb-3">
+              Custom Website Development
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Bespoke websites designed to perfectly match your brand identity
+              and business goals.
             </p>
+            
           </div>
-
-          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 ease-in-out"
+          >
             <div
-              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+              class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-lg mb-6"
             >
-              <i class="ri-palette-line text-primary ri-2x"></i>
+              <i class="ri-shopping-cart-2-line ri-xl text-primary"></i>
             </div>
-            <h3 class="text-xl font-semibold mb-3">Easy Customization</h3>
-            <p class="text-gray-600">
-              Customize colors, fonts, and layouts with our intuitive editor -
-              no coding required.
+            <h3 class="text-xl font-semibold mb-3">E-commerce Solutions</h3>
+            <p class="text-gray-600 mb-4">
+              Powerful online stores with seamless checkout processes and
+              inventory management.
             </p>
+           
           </div>
-
-          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 ease-in-out"
+          >
             <div
-              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+              class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-lg mb-6"
             >
-              <i class="ri-rocket-line text-primary ri-2x"></i>
+              <i class="ri-palette-line ri-xl text-primary"></i>
             </div>
-            <h3 class="text-xl font-semibold mb-3">Fast Performance</h3>
-            <p class="text-gray-600">
-              Optimized for speed with clean code and efficient loading times
-              for better SEO ranking.
+            <h3 class="text-xl font-semibold mb-3">UI/UX Design</h3>
+            <p class="text-gray-600 mb-4">
+              Intuitive, user-centered designs that enhance user experience and
+              drive conversions.
             </p>
+            
           </div>
-
-          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 ease-in-out"
+          >
             <div
-              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+              class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-lg mb-6"
             >
-              <i class="ri-customer-service-2-line text-primary ri-2x"></i>
+              <i class="ri-line-chart-line ri-xl text-primary"></i>
             </div>
-            <h3 class="text-xl font-semibold mb-3">Premium Support</h3>
-            <p class="text-gray-600">
-              Get help when you need it with our responsive customer support and
-              detailed documentation.
+            <h3 class="text-xl font-semibold mb-3">SEO & Performance</h3>
+            <p class="text-gray-600 mb-4">
+              Optimization strategies to improve search rankings and website
+              speed.
             </p>
+            
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Testimonials -->
-    <section class="py-16 bg-white">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20">
       <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto text-center mb-12">
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">
-            What Our Customers Say
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Our Latest Projects
           </h2>
-          <p class="text-gray-600">
-            Join thousands of satisfied customers who have built their online
-            presence with our templates.
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Explore our recent work and see how we've helped businesses achieve
+            their digital goals.
           </p>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <div class="flex text-yellow-400 mb-4">
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-            </div>
-            <p class="text-gray-700 mb-6">
-              "I launched my online store in just one day using the ShopElite
-              template. The customization options are incredible, and my sales
-              have increased by 40% since the new site went live."
-            </p>
-            <div class="flex items-center">
-              <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
-              <div>
-                <h4 class="font-semibold text-gray-800">Emily Richardson</h4>
-                <p class="text-sm text-gray-600">Boutique Owner</p>
-              </div>
+        <div class="flex justify-center mb-10">
+          <div class="inline-flex bg-gray-100 p-1 rounded-full">
+            <button
+              class="px-4 py-2 rounded-full bg-primary text-white whitespace-nowrap"
+            >
+              All Projects
+            </button>
+            <button
+              class="px-4 py-2 rounded-full text-gray-700 whitespace-nowrap"
+            >
+              E-commerce
+            </button>
+            <button
+              class="px-4 py-2 rounded-full text-gray-700 whitespace-nowrap"
+            >
+              Corporate
+            </button>
+            <button
+              class="px-4 py-2 rounded-full text-gray-700 whitespace-nowrap"
+            >
+              Landing Pages
+            </button>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="portfolio-card group relative rounded-lg overflow-hidden shadow-md"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=modern%20luxury%20fashion%20e-commerce%20website%20on%20laptop%20screen%2C%20professional%20web%20design%2C%20clean%20layout%20with%20product%20images%2C%20minimalist%20design%2C%20high-end%20fashion%20products%20displayed%20elegantly&width=600&height=450&seq=12347&orientation=landscape"
+              alt="Fashion E-commerce Website"
+              class="w-full h-64 object-cover object-top"
+            />
+            <div
+              class="portfolio-overlay absolute inset-0 bg-primary/80 flex flex-col justify-center items-center p-6 opacity-0 transition-opacity duration-300"
+            >
+              <h3 class="text-xl font-semibold text-white mb-2">
+                Luxe Fashion Boutique
+              </h3>
+              <p class="text-white/90 mb-4 text-center">
+                E-commerce / Fashion Industry
+              </p>
+              <button
+                class="bg-white text-primary px-4 py-2 rounded-full font-medium !rounded-button whitespace-nowrap"
+              >
+                View Project
+              </button>
             </div>
           </div>
-
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <div class="flex text-yellow-400 mb-4">
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-            </div>
-            <p class="text-gray-700 mb-6">
-              "As a photographer, I needed a portfolio that would showcase my
-              work beautifully. Portfolio Plus was perfect - clean, elegant, and
-              it puts my images front and center. Clients love it!"
-            </p>
-            <div class="flex items-center">
-              <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
-              <div>
-                <h4 class="font-semibold text-gray-800">Michael Thompson</h4>
-                <p class="text-sm text-gray-600">Professional Photographer</p>
-              </div>
+          <div
+            class="portfolio-card group relative rounded-lg overflow-hidden shadow-md"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=financial%20services%20corporate%20website%20on%20desktop%20screen%2C%20professional%20business%20web%20design%2C%20dashboard%20with%20charts%20and%20graphs%2C%20blue%20color%20scheme%2C%20clean%20corporate%20layout&width=600&height=450&seq=12348&orientation=landscape"
+              alt="Financial Services Website"
+              class="w-full h-64 object-cover object-top"
+            />
+            <div
+              class="portfolio-overlay absolute inset-0 bg-primary/80 flex flex-col justify-center items-center p-6 opacity-0 transition-opacity duration-300"
+            >
+              <h3 class="text-xl font-semibold text-white mb-2">
+                Global Financial Partners
+              </h3>
+              <p class="text-white/90 mb-4 text-center">
+                Corporate / Financial Services
+              </p>
+              <button
+                class="bg-white text-primary px-4 py-2 rounded-full font-medium !rounded-button whitespace-nowrap"
+              >
+                View Project
+              </button>
             </div>
           </div>
-
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <div class="flex text-yellow-400 mb-4">
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-half-fill"></i>
+          <div
+            class="portfolio-card group relative rounded-lg overflow-hidden shadow-md"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=restaurant%20food%20ordering%20website%20on%20tablet%2C%20culinary%20web%20design%2C%20menu%20layout%20with%20food%20photography%2C%20reservation%20system%2C%20elegant%20restaurant%20website%20design&width=600&height=450&seq=12349&orientation=landscape"
+              alt="Restaurant Website"
+              class="w-full h-64 object-cover object-top"
+            />
+            <div
+              class="portfolio-overlay absolute inset-0 bg-primary/80 flex flex-col justify-center items-center p-6 opacity-0 transition-opacity duration-300"
+            >
+              <h3 class="text-xl font-semibold text-white mb-2">
+                Savory Bistro
+              </h3>
+              <p class="text-white/90 mb-4 text-center">
+                Food & Beverage / Restaurant
+              </p>
+              <button
+                class="bg-white text-primary px-4 py-2 rounded-full font-medium !rounded-button whitespace-nowrap"
+              >
+                View Project
+              </button>
             </div>
-            <p class="text-gray-700 mb-6">
-              "The Business Pro template helped us establish a professional
-              online presence for our consulting firm. The support team was
-              incredibly helpful when we had questions about customization."
-            </p>
-            <div class="flex items-center">
-              <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
-              <div>
-                <h4 class="font-semibold text-gray-800">Sarah Johnson</h4>
-                <p class="text-sm text-gray-600">Marketing Director</p>
+          </div>
+          <div
+            class="portfolio-card group relative rounded-lg overflow-hidden shadow-md"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=real%20estate%20property%20listing%20website%20on%20laptop%2C%20property%20search%20interface%2C%20map%20integration%2C%20modern%20real%20estate%20web%20design%2C%20professional%20property%20photography&width=600&height=450&seq=12350&orientation=landscape"
+              alt="Real Estate Website"
+              class="w-full h-64 object-cover object-top"
+            />
+            <div
+              class="portfolio-overlay absolute inset-0 bg-primary/80 flex flex-col justify-center items-center p-6 opacity-0 transition-opacity duration-300"
+            >
+              <h3 class="text-xl font-semibold text-white mb-2">
+                Premier Properties
+              </h3>
+              <p class="text-white/90 mb-4 text-center">
+                Real Estate / Property Listings
+              </p>
+              <button
+                class="bg-white text-primary px-4 py-2 rounded-full font-medium !rounded-button whitespace-nowrap"
+              >
+                View Project
+              </button>
+            </div>
+          </div>
+          <div
+            class="portfolio-card group relative rounded-lg overflow-hidden shadow-md"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=fitness%20and%20wellness%20app%20interface%20on%20mobile%20phone%2C%20workout%20tracking%2C%20nutrition%20planning%2C%20modern%20fitness%20web%20application%20design%2C%20health%20tech%20interface&width=600&height=450&seq=12351&orientation=landscape"
+              alt="Fitness App"
+              class="w-full h-64 object-cover object-top"
+            />
+            <div
+              class="portfolio-overlay absolute inset-0 bg-primary/80 flex flex-col justify-center items-center p-6 opacity-0 transition-opacity duration-300"
+            >
+              <h3 class="text-xl font-semibold text-white mb-2">FitLife Pro</h3>
+              <p class="text-white/90 mb-4 text-center">
+                Health & Fitness / Mobile App
+              </p>
+              <button
+                class="bg-white text-primary px-4 py-2 rounded-full font-medium !rounded-button whitespace-nowrap"
+              >
+                View Project
+              </button>
+            </div>
+          </div>
+          <div
+            class="portfolio-card group relative rounded-lg overflow-hidden shadow-md"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=educational%20online%20course%20platform%20on%20laptop%20and%20tablet%2C%20e-learning%20interface%2C%20video%20lessons%2C%20student%20dashboard%2C%20modern%20educational%20website%20design&width=600&height=450&seq=12352&orientation=landscape"
+              alt="E-Learning Platform"
+              class="w-full h-64 object-cover object-top"
+            />
+            <div
+              class="portfolio-overlay absolute inset-0 bg-primary/80 flex flex-col justify-center items-center p-6 opacity-0 transition-opacity duration-300"
+            >
+              <h3 class="text-xl font-semibold text-white mb-2">
+                EduMaster Learning
+              </h3>
+              <p class="text-white/90 mb-4 text-center">
+                Education / E-Learning Platform
+              </p>
+              <button
+                class="bg-white text-primary px-4 py-2 rounded-full font-medium !rounded-button whitespace-nowrap"
+              >
+                View Project
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <button
+            class="bg-white border border-gray-300 text-gray-700 px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-gray-50 transition"
+          >
+            View All Projects
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Process Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Our Development Process
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            We follow a proven methodology to deliver exceptional results for
+            every project.
+          </p>
+        </div>
+        <div class="max-w-4xl mx-auto">
+          <div class="relative">
+            <div class="process-item relative pl-16 pb-12">
+              <div
+                class="absolute left-0 top-0 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold"
+              >
+                1
               </div>
+              <h3 class="text-xl font-semibold mb-3">Discovery & Planning</h3>
+              <p class="text-gray-600">
+                We begin by understanding your business goals, target audience,
+                and project requirements. Our team conducts thorough research
+                and creates a detailed project roadmap.
+              </p>
+            </div>
+            <div class="process-item relative pl-16 pb-12">
+              <div
+                class="absolute left-0 top-0 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold"
+              >
+                2
+              </div>
+              <h3 class="text-xl font-semibold mb-3">Design & Prototyping</h3>
+              <p class="text-gray-600">
+                Our designers create wireframes and visual concepts for your
+                approval. We focus on user experience, brand consistency, and
+                conversion-optimized layouts.
+              </p>
+            </div>
+            <div class="process-item relative pl-16 pb-12">
+              <div
+                class="absolute left-0 top-0 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold"
+              >
+                3
+              </div>
+              <h3 class="text-xl font-semibold mb-3">Development & Testing</h3>
+              <p class="text-gray-600">
+                Our development team brings the designs to life with clean,
+                efficient code. We conduct rigorous testing across devices and
+                browsers to ensure flawless functionality.
+              </p>
+            </div>
+            <div class="process-item relative pl-16 pb-12">
+              <div
+                class="absolute left-0 top-0 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold"
+              >
+                4
+              </div>
+              <h3 class="text-xl font-semibold mb-3">Launch & Support</h3>
+              <p class="text-gray-600">
+                After final approval, we deploy your website and provide
+                comprehensive training. Our ongoing support ensures your site
+                continues to perform optimally.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- Testimonials Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            What Our Clients Say
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Don't just take our word for it. Here's what our clients have to say
+            about working with us.
+          </p>
+        </div>
+        <div class="relative max-w-4xl mx-auto overflow-hidden">
+          <div
+            class="testimonial-slider flex transition-transform duration-500"
+            id="testimonial-slider"
+          >
+            <div class="testimonial-slide min-w-full px-4">
+              <div class="bg-white p-8 rounded-lg shadow-md">
+                <div class="flex text-yellow-400 mb-4">
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                </div>
+                <p class="text-gray-700 italic mb-6">
+                  "Working with this team was a game-changer for our business.
+                  They transformed our outdated website into a modern,
+                  high-converting platform that perfectly represents our brand.
+                  The attention to detail and technical expertise was
+                  impressive."
+                </p>
+                <div class="flex items-center">
+                  <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                    <img
+                      src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20female%20business%20executive%2C%2040s%2C%20confident%20smile%2C%20business%20attire%2C%20neutral%20background%2C%20corporate%20portrait&width=100&height=100&seq=12353&orientation=squarish"
+                      alt="Emily Richardson"
+                      class="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-semibold">Emily Richardson</h4>
+                    <p class="text-gray-600 text-sm">
+                      Marketing Director, Novus Tech
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide min-w-full px-4">
+              <div class="bg-white p-8 rounded-lg shadow-md">
+                <div class="flex text-yellow-400 mb-4">
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                </div>
+                <p class="text-gray-700 italic mb-6">
+                  "Our e-commerce sales increased by 45% within three months of
+                  launching our new website. The team's expertise in UX design
+                  and conversion optimization made all the difference. They were
+                  responsive, professional, and delivered beyond our
+                  expectations."
+                </p>
+                <div class="flex items-center">
+                  <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                    <img
+                      src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20male%20business%20owner%2C%2030s%2C%20casual%20business%20attire%2C%20friendly%20expression%2C%20neutral%20background%2C%20entrepreneur%20portrait&width=100&height=100&seq=12354&orientation=squarish"
+                      alt="Michael Donovan"
+                      class="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-semibold">Michael Donovan</h4>
+                    <p class="text-gray-600 text-sm">
+                      Founder, Altitude Apparel
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide min-w-full px-4">
+              <div class="bg-white p-8 rounded-lg shadow-md">
+                <div class="flex text-yellow-400 mb-4">
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                </div>
+                <p class="text-gray-700 italic mb-6">
+                  "As a small business owner, I was worried about the investment
+                  in a professional website. This team made the process painless
+                  and delivered a site that has paid for itself many times over.
+                  Their ongoing support has been exceptional."
+                </p>
+                <div class="flex items-center">
+                  <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                    <img
+                      src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20female%20small%20business%20owner%2C%20mid%2030s%2C%20warm%20smile%2C%20casual%20professional%20attire%2C%20light%20background%2C%20small%20business%20portrait&width=100&height=100&seq=12355&orientation=squarish"
+                      alt="Sarah Jenkins"
+                      class="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-semibold">Sarah Jenkins</h4>
+                    <p class="text-gray-600 text-sm">Owner, Bloom Café</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center mt-8">
+            <button
+              class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 mx-1"
+              data-index="0"
+            ></button>
+            <button
+              class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 mx-1"
+              data-index="1"
+            ></button>
+            <button
+              class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 mx-1"
+              data-index="2"
+            ></button>
+          </div>
+          <button
+            class="absolute top-1/2 left-0 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md text-gray-700 z-10"
+            id="prev-testimonial"
+          >
+            <i class="ri-arrow-left-s-line ri-lg"></i>
+          </button>
+          <button
+            class="absolute top-1/2 right-0 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md text-gray-700 z-10"
+            id="next-testimonial"
+          >
+            <i class="ri-arrow-right-s-line ri-lg"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+    
     <!-- CTA Section -->
-    <section
-      class="py-16 bg-gradient-to-r from-blue-600 to-indigo-700 text-white"
-    >
+    <section class="cta-section py-20 text-white">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-6">Ready to Build Your Website?</h2>
-        <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-          Choose from our collection of professional templates and launch your
-          website today. No technical skills required.
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Ready to Transform Your Online Presence?
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Let's create a website that drives results for your business. Our team
+          is ready to bring your vision to life.
         </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <button
-            class="bg-white text-blue-700 px-6 py-3 rounded-button hover:bg-blue-50 transition-colors whitespace-nowrap"
-          >
-            Browse Templates
-          </button>
-          <button
-            class="bg-transparent text-white px-6 py-3 rounded-button border border-white hover:bg-white hover:bg-opacity-10 transition-colors whitespace-nowrap"
-          >
-            Learn More
-          </button>
-        </div>
+        <button
+          class="bg-white text-primary px-8 py-4 font-semibold text-lg !rounded-button whitespace-nowrap hover:bg-gray-100 transition"
+        >
+          Start Your Project Today
+        </button>
       </div>
     </section>
-
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-16 pb-8">
       <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
-            <h1 class="text-2xl font-['Pacifico'] text-white mb-4">logo</h1>
+            <a
+              href="#"
+              class="text-2xl font-['Pacifico'] text-white mb-4 inline-block"
+              >logo</a
+            >
             <p class="text-gray-400 mb-6">
-              Professional website templates for businesses of all sizes. Easy
-              to customize and quick to launch.
+              We craft beautiful, functional websites that help businesses grow
+              online. With over 10 years of experience, we're trusted by
+              companies worldwide.
             </p>
             <div class="flex space-x-4">
               <a
                 href="#"
-                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
               >
                 <i class="ri-facebook-fill"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
               >
                 <i class="ri-twitter-x-fill"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
               >
                 <i class="ri-instagram-fill"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
               >
                 <i class="ri-linkedin-fill"></i>
               </a>
             </div>
           </div>
-
           <div>
-            <h3 class="text-lg font-semibold mb-4">Templates</h3>
-            <ul class="space-y-2">
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-3">
               <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Business Templates</a
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Home</a
                 >
               </li>
               <li>
                 <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >E-commerce Templates</a
+                  href="#services"
+                  class="text-gray-400 hover:text-white transition"
+                  >Services</a
                 >
               </li>
               <li>
                 <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Portfolio Templates</a
+                  href="#portfolio"
+                  class="text-gray-400 hover:text-white transition"
+                  >Portfolio</a
                 >
               </li>
               <li>
                 <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Blog Templates</a
+                  href="#pricing"
+                  class="text-gray-400 hover:text-white transition"
+                  >Pricing</a
                 >
               </li>
               <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Landing Page Templates</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="text-lg font-semibold mb-4">Company</h3>
-            <ul class="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
+                <a href="#" class="text-gray-400 hover:text-white transition"
                   >About Us</a
                 >
               </li>
               <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Careers</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Blog</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Press</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Contact Us</a
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Contact</a
                 >
               </li>
             </ul>
           </div>
-
           <div>
-            <h3 class="text-lg font-semibold mb-4">Schedule a Call</h3>
+            <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i class="ri-map-pin-line mt-1 mr-3"></i>
+                <span class="text-gray-400"
+                  >123 Web Design Street, San Francisco, CA 94103</span
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="ri-phone-line mr-3"></i>
+                <span class="text-gray-400">(555) 123-4567</span>
+              </li>
+              <li class="flex items-center">
+                <i class="ri-mail-line mr-3"></i>
+                <span class="text-gray-400">info@webdesignpro.com</span>
+              </li>
+              <li class="flex items-center">
+                <i class="ri-time-line mr-3"></i>
+                <span class="text-gray-400">Mon-Fri: 9AM - 6PM</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
             <p class="text-gray-400 mb-4">
-              Book a time to discuss your project with us.
+              Subscribe to receive updates, access to exclusive deals, and more.
             </p>
-            <!-- Calendly inline widget begin -->
-            <div
-              class="calendly-inline-widget"
-              data-url="https://calendly.com/leadminnow"
-              style="min-width:320px;height:700px;"
-            ></div>
-            <script
-              type="text/javascript"
-              src="https://assets.calendly.com/assets/external/widget.js"
-              async
-            ></script>
-            <!-- Calendly inline widget end -->
+            <form class="flex flex-col space-y-3">
+              <input
+                type="email"
+                placeholder="Your email address"
+                class="bg-gray-800 border-none text-white px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+              />
+              <button
+                type="submit"
+                class="bg-primary text-white py-3 font-medium !rounded-button whitespace-nowrap hover:bg-primary/90 transition"
+              >
+                Subscribe
+              </button>
+            </form>
+            <div class="flex items-center mt-6">
+              <div class="flex space-x-2">
+                <i class="ri-visa-fill text-2xl text-gray-400"></i>
+                <i class="ri-mastercard-fill text-2xl text-gray-400"></i>
+                <i class="ri-paypal-fill text-2xl text-gray-400"></i>
+                <i class="ri-apple-fill text-2xl text-gray-400"></i>
+              </div>
+            </div>
           </div>
         </div>
-
         <div class="border-t border-gray-800 pt-8">
           <div class="flex flex-col md:flex-row justify-between items-center">
-            <p class="text-gray-500 text-sm">
-              © 2025 Template Gallery. All rights reserved.
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2025 WebCraft Pro. All rights reserved.
             </p>
-            <div class="flex items-center space-x-6 mt-4 md:mt-0">
+            <div class="flex space-x-6">
               <a
                 href="#"
-                class="text-gray-500 text-sm hover:text-white transition-colors"
+                class="text-gray-400 hover:text-white text-sm transition"
                 >Privacy Policy</a
               >
               <a
                 href="#"
-                class="text-gray-500 text-sm hover:text-white transition-colors"
+                class="text-gray-400 hover:text-white text-sm transition"
                 >Terms of Service</a
               >
               <a
                 href="#"
-                class="text-gray-500 text-sm hover:text-white transition-colors"
+                class="text-gray-400 hover:text-white text-sm transition"
                 >Cookie Policy</a
               >
             </div>
@@ -1034,64 +920,79 @@
         </div>
       </div>
     </footer>
-
+    <!-- Scroll to Top Button -->
+    <div class="fixed bottom-6 right-24 z-50 hidden" id="scroll-top-button">
+      <button
+        class="bg-white text-gray-700 w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 transition border border-gray-200"
+      >
+        <i class="ri-arrow-up-line ri-lg"></i>
+      </button>
+    </div>
     <script>
-      // Toggle checkbox functionality
-      document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
-        checkbox.addEventListener("click", function () {
-          const indicator = this.previousElementSibling.querySelector("div");
-          if (this.checked) {
-            indicator.classList.remove("hidden");
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+        
+        // Testimonial Slider
+        const testimonialSlider = document.getElementById("testimonial-slider");
+        const testimonialDots = document.querySelectorAll(".testimonial-dot");
+        const prevButton = document.getElementById("prev-testimonial");
+        const nextButton = document.getElementById("next-testimonial");
+        let currentSlide = 0;
+        function updateSlider() {
+          testimonialSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+          testimonialDots.forEach((dot, index) => {
+            if (index === currentSlide) {
+              dot.classList.add("bg-primary");
+              dot.classList.remove("bg-gray-300");
+            } else {
+              dot.classList.add("bg-gray-300");
+              dot.classList.remove("bg-primary");
+            }
+          });
+        }
+        testimonialDots.forEach((dot, index) => {
+          dot.addEventListener("click", () => {
+            currentSlide = index;
+            updateSlider();
+          });
+        });
+        prevButton.addEventListener("click", () => {
+          currentSlide =
+            (currentSlide - 1 + testimonialDots.length) % testimonialDots.length;
+          updateSlider();
+        });
+        nextButton.addEventListener("click", () => {
+          currentSlide = (currentSlide + 1) % testimonialDots.length;
+          updateSlider();
+        });
+        // Initialize slider
+        updateSlider();
+        // Auto slide every 5 seconds
+        setInterval(() => {
+          currentSlide = (currentSlide + 1) % testimonialDots.length;
+          updateSlider();
+        }, 5000);
+        // Scroll to Top Button
+        const scrollTopButton = document.getElementById("scroll-top-button");
+        window.addEventListener("scroll", () => {
+          if (window.pageYOffset > 300) {
+            scrollTopButton.classList.remove("hidden");
           } else {
-            indicator.classList.add("hidden");
+            scrollTopButton.classList.add("hidden");
           }
         });
-      });
-
-      // Template hover effect (already handled by CSS)
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const leadForm = document.getElementById("leadForm");
-
-        leadForm.addEventListener("submit", async function (e) {
-          e.preventDefault();
-          const formData = {
-            email: document.getElementById("email").value,
-            source: "Website Newsletter"
-          };
-
-          try {
-            console.log("Sending request to server...");
-            const response = await fetch("http://127.0.0.1:3001/api/leads", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-              },
-              body: JSON.stringify(formData)
-            });
-
-            console.log("Server response status:", response.status);
-
-            if (response.ok) {
-              const data = await response.json();
-              console.log("Success response:", data);
-              alert("Thank you for subscribing to our newsletter!");
-              leadForm.reset();
-            } else {
-              const errorData = await response.text();
-              console.error("Server error response:", errorData);
-              alert(`Error: ${response.status} - ${errorData || "Failed to subscribe"}`);
-            }
-          } catch (error) {
-            console.error("Error details:", error);
-            alert("Connection error: Please make sure the server is running and try again.");
-          }
+        scrollTopButton.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
         });
       });
     </script>
-    <!-- Add chatbot scripts -->
-    <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
-    <script src="https://files.bpcontent.cloud/2025/04/18/15/20250418150249-PM36R8KH.js"></script>
   </body>
 </html>
