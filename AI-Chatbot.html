@@ -44,9 +44,10 @@
           font-family: 'Inter', sans-serif;
       }
       .hero-section {
-          background-image: url('https://public.readdy.ai/ai/img_res/bc80d4147a5c374d5b9b309e1bffa2b7.jpg');
-          background-size: cover;
-          background-position: center;
+          background: transparent;
+          position: relative;
+          overflow: hidden;
+          min-height: 600px;
       }
       input[type="range"]::-webkit-slider-thumb {
           -webkit-appearance: none;
@@ -142,16 +143,22 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="hero-section w-full min-h-[600px] relative">
-      <div
-        class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"
-      ></div>
-      <div class="container mx-auto px-6 py-20 relative z-10">
-        <div class="max-w-2xl">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+    <section class="hero-section w-full min-h-[600px] relative" style="min-height:600px;">
+      <!-- Spline 3D Model Background -->
+      <iframe
+        src="https://my.spline.design/chatgptkeyboard-Wf2VzsozON6zxER9sA9dTOIH/"
+        frameborder="0"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;"
+        allowfullscreen
+      ></iframe>
+      <!-- Optional: Overlay for readability, does not block pointer events -->
+      <!-- <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.3);z-index:2;pointer-events:none;"></div> -->
+      <div class="container mx-auto px-6 py-20 relative" style="z-index:3; pointer-events:none;">
+        <div class="max-w-2xl" style="pointer-events:auto;">
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
             AI Chatbot Solutions for Modern Businesses
           </h1>
-          <p class="text-lg text-gray-700 mb-8">
+          <p class="text-lg text-white mb-8">
             Transform your customer engagement with intelligent conversational
             AI that provides 24/7 support, automates responses, and delivers
             personalized experiences at scale.
