@@ -144,65 +144,53 @@
   </head>
   <body class="bg-white">
     <!-- SECTION: Header/Navigation -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-      <div
-        class="container mx-auto px-4 py-4 flex items-center justify-between"
-      >
-      <!-- Logo and Title -->
-      <div class="flex items-center">
-        <a href="index.html" class="flex items-center space-x-2">
-          <img src="Images/Main_logo.png" alt="LM Logo" class="h-10 w-auto" />
-        </a>
-      </div>
-      
-      
-      <!-- Mobile Menu Toggle Button -->
-        <nav class="hidden lg:flex items-center space-x-8">
-          <a
-            href="#services"
-            class="text-gray-700 hover:text-primary font-medium transition-colors"
-            >Services</a
-          >
-          <a
-            href="#solutions"
-            class="text-gray-700 hover:text-primary font-medium transition-colors"
-            >Solutions</a
-          >
-          <a
-            href="AboutUs.html"
-            class="text-gray-700 hover:text-primary font-medium transition-colors"
-            >About Us</a
-          >
-          <a
-            href="Contact_us.html"
-            class="text-gray-700 hover:text-primary font-medium transition-colors"
-            >Contact Us</a
-          >
-        </nav>
-        <div class="flex items-center space-x-4">
-          <div
-            class="hidden md:flex items-center border border-gray-200 rounded px-2 py-1"
-          >
-            <span class="text-gray-600 text-sm">EN</span>
-            <div class="w-6 h-6 flex items-center justify-center text-gray-500">
-              <i class="ri-arrow-down-s-line"></i>
+    <header class="w-full bg-white shadow-sm">
+      <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+          <div class="flex items-center">
+              <a href="index.html" class="flex items-center space-x-2">
+                <img src="Images/Main_logo.png" alt="LM Logo" class="h-10 w-auto" />
+              </a>
             </div>
-          </div>
-          <a
-            href="#contact"
-            class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition-colors"
-            >Get Started</a
-          >
-          <button
-            type="button"
-            title="Open mobile menu"
-            class="lg:hidden w-10 h-10 flex items-center justify-center text-gray-700"
-          >
-            <i class="ri-menu-line ri-lg"></i>
-          </button>
-        </div>
+      <nav class="hidden md:flex items-center space-x-8">
+      <div class="relative group">
+      <button class="text-gray-700 hover:text-primary font-medium flex items-center">
+      Services
+      <span class="ml-1 w-5 h-5 flex items-center justify-center">
+      <i class="ri-arrow-down-s-line"></i>
+      </span>
+      </button>
+      <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+      <a href="AI-Chatbot.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">AI Chatbots</a>
+      <a href="Facebook.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Meta Ads</a>
+      <a href="ads_making.html" class="block px-4 py-2 text-sm text-primary font-medium hover:bg-gray-50">Animated Ads</a>
+      <a href="ads_making.html" class="block px-4 py-2 text-sm text-primary font-medium hover:bg-gray-50">UI/UX Design</a>
       </div>
-    </header>
+      </div>
+      <a href="AboutUs.html" class="text-gray-700 hover:text-primary font-medium">About Us</a>
+      <a href="Contact_us.html" class="text-gray-700 hover:text-primary font-medium">Contact Us</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+      <div class="relative">
+      <button class="flex items-center text-gray-700 hover:text-primary">
+      EN
+      <span class="ml-1 w-5 h-5 flex items-center justify-center">
+      <i class="ri-arrow-down-s-line"></i>
+      </span>
+      </button>
+      <div class="absolute right-0 mt-2 w-24 bg-white shadow-lg rounded hidden">
+      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">EN</a>
+      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">FR</a>
+      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">DE</a>
+      </div>
+      </div>
+      <a
+      href="contact_us.html"
+      class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition-colors"
+      >Get Started</a
+    >
+      </div>
+      </div>
+      </header>
     <!-- Hero Section -->
     <section class="hero-section min-h-[700px] flex items-center pt-24 pb-16 relative bg-white">
       <div class="container mx-auto px-4 relative">
@@ -352,30 +340,6 @@
             their digital goals.
           </p>
         </div>
-        <div class="flex justify-center mb-10">
-          <div class="inline-flex bg-gray-100 p-1 rounded-full">
-            <button
-              class="px-4 py-2 rounded-full bg-primary text-white whitespace-nowrap"
-            >
-              All Projects
-            </button>
-            <button
-              class="px-4 py-2 rounded-full text-gray-700 whitespace-nowrap"
-            >
-              E-commerce
-            </button>
-            <button
-              class="px-4 py-2 rounded-full text-gray-700 whitespace-nowrap"
-            >
-              Corporate
-            </button>
-            <button
-              class="px-4 py-2 rounded-full text-gray-700 whitespace-nowrap"
-            >
-              Landing Pages
-            </button>
-          </div>
-        </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
             class="portfolio-card group relative rounded-lg overflow-hidden shadow-md"
@@ -520,13 +484,7 @@
             </div>
           </div>
         </div>
-        <div class="text-center mt-12">
-          <button
-            class="bg-white border border-gray-300 text-gray-700 px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-gray-50 transition"
-          >
-            View All Projects
-          </button>
-        </div>
+       
       </div>
     </section>
     <!-- Process Section -->
@@ -611,134 +569,86 @@
             about working with us.
           </p>
         </div>
-        <div class="relative max-w-4xl mx-auto overflow-hidden">
-          <div
-            class="testimonial-slider flex transition-transform duration-500"
-            id="testimonial-slider"
-          >
-            <div class="testimonial-slide min-w-full px-4">
-              <div class="bg-white p-8 rounded-lg shadow-md">
-                <div class="flex text-yellow-400 mb-4">
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                </div>
-                <p class="text-gray-700 italic mb-6">
-                  "Working with this team was a game-changer for our business.
-                  They transformed our outdated website into a modern,
-                  high-converting platform that perfectly represents our brand.
-                  The attention to detail and technical expertise was
-                  impressive."
-                </p>
-                <div class="flex items-center">
-                  <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                    <img
-                      src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20female%20business%20executive%2C%2040s%2C%20confident%20smile%2C%20business%20attire%2C%20neutral%20background%2C%20corporate%20portrait&width=100&height=100&seq=12353&orientation=squarish"
-                      alt="Emily Richardson"
-                      class="w-full h-full object-cover object-top"
-                    />
-                  </div>
-                  <div>
-                    <h4 class="font-semibold">Emily Richardson</h4>
-                    <p class="text-gray-600 text-sm">
-                      Marketing Director, Novus Tech
-                    </p>
-                  </div>
-                </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <div class="flex items-center mb-6">
+              <p class="text-primary mr-2">Meta Ads _</p>
+              <div class="text-primary">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
               </div>
             </div>
-            <div class="testimonial-slide min-w-full px-4">
-              <div class="bg-white p-8 rounded-lg shadow-md">
-                <div class="flex text-yellow-400 mb-4">
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                </div>
-                <p class="text-gray-700 italic mb-6">
-                  "Our e-commerce sales increased by 45% within three months of
-                  launching our new website. The team's expertise in UX design
-                  and conversion optimization made all the difference. They were
-                  responsive, professional, and delivered beyond our
-                  expectations."
-                </p>
-                <div class="flex items-center">
-                  <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                    <img
-                      src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20male%20business%20owner%2C%2030s%2C%20casual%20business%20attire%2C%20friendly%20expression%2C%20neutral%20background%2C%20entrepreneur%20portrait&width=100&height=100&seq=12354&orientation=squarish"
-                      alt="Michael Donovan"
-                      class="w-full h-full object-cover object-top"
-                    />
-                  </div>
-                  <div>
-                    <h4 class="font-semibold">Michael Donovan</h4>
-                    <p class="text-gray-600 text-sm">
-                      Founder, Altitude Apparel
-                    </p>
-                  </div>
-                </div>
+            <p class="text-gray-600 mb-6">
+              "Leadminnow helped us generate high-quality leads and increase sales faster than we expected.
+              The entire process was seamless—he handled everything from ad strategy to optimization, making it incredibly easy to work with him.
+              He took the time to understand our business, provided clear communication, and delivered real, trackable results."
+            </p>
+            <div class="flex items-center">
+              <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                <img src="Images/PPl/TestMonial/T1.png" alt="Yogesh Byas" class="w-full h-full object-cover object-top" />
               </div>
-            </div>
-            <div class="testimonial-slide min-w-full px-4">
-              <div class="bg-white p-8 rounded-lg shadow-md">
-                <div class="flex text-yellow-400 mb-4">
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                </div>
-                <p class="text-gray-700 italic mb-6">
-                  "As a small business owner, I was worried about the investment
-                  in a professional website. This team made the process painless
-                  and delivered a site that has paid for itself many times over.
-                  Their ongoing support has been exceptional."
-                </p>
-                <div class="flex items-center">
-                  <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                    <img
-                      src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20female%20small%20business%20owner%2C%20mid%2030s%2C%20warm%20smile%2C%20casual%20professional%20attire%2C%20light%20background%2C%20small%20business%20portrait&width=100&height=100&seq=12355&orientation=squarish"
-                      alt="Sarah Jenkins"
-                      class="w-full h-full object-cover object-top"
-                    />
-                  </div>
-                  <div>
-                    <h4 class="font-semibold">Sarah Jenkins</h4>
-                    <p class="text-gray-600 text-sm">Owner, Bloom Café</p>
-                  </div>
-                </div>
+              <div>
+                <h4 class="text-gray-900 font-bold">Yogesh Byas</h4>
+                <p class="text-gray-500 text-sm">Founder of Microbiq labs pvt ltd</p>
               </div>
             </div>
           </div>
-          <div class="flex justify-center mt-8">
-            <button
-              class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 mx-1"
-              data-index="0"
-            ></button>
-            <button
-              class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 mx-1"
-              data-index="1"
-            ></button>
-            <button
-              class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 mx-1"
-              data-index="2"
-            ></button>
+          <!-- Testimonial 2 -->
+          <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <div class="flex items-center mb-6">
+              <p class="text-primary mr-2">Graphic Design _</p>
+              <div class="text-primary">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6">
+              "Leadminnow completely transformed our brand image with their stunning graphic design work.
+              Since launching the new visuals for Lasena Water, our product sales have increased by 5x! Their creativity and professionalism made a huge impact on our business."
+            </p>
+            <div class="flex items-center">
+              <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                <img src="Images/PPl/TestMonial/T2.png" alt="Sallih Musa-Elakama" class="w-full h-full object-cover object-top" />
+              </div>
+              <div>
+                <h4 class="text-gray-900 font-bold">Sallih Musa-Elakama</h4>
+                <p class="text-gray-500 text-sm">Lasena Water Team</p>
+              </div>
+            </div>
           </div>
-          <button
-            class="absolute top-1/2 left-0 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md text-gray-700 z-10"
-            id="prev-testimonial"
-          >
-            <i class="ri-arrow-left-s-line ri-lg"></i>
-          </button>
-          <button
-            class="absolute top-1/2 right-0 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md text-gray-700 z-10"
-            id="next-testimonial"
-          >
-            <i class="ri-arrow-right-s-line ri-lg"></i>
-          </button>
+          <!-- Testimonial 3 -->
+          <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <div class="flex items-center mb-6">
+              <p class="text-primary mr-2">AI ChatBot _</p>
+              <div class="text-primary">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6">
+              "Working with Leadminnow on our ANAY ChatBot has been a game-changer. Their data-driven chatbot helped us secure most of the clients we previously couldn't reach."<br>
+              "The chatbot is not only efficient but also provides a personalized experience that enhances customer satisfaction."
+            </p>
+            <div class="flex items-center">
+              <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                <img src="Images/PPl/TestMonial/T3.jpg" alt="Michael Thompson" class="w-full h-full object-cover object-top" />
+              </div>
+              <div>
+                <h4 class="text-gray-900 font-bold">Michael Thompson</h4>
+                <p class="text-gray-500 text-sm">Founder of SkillValley</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -753,168 +663,238 @@
           Let's create a website that drives results for your business. Our team
           is ready to bring your vision to life.
         </p>
-        <button
+        <a
+          href="Contact_us.html"
           class="bg-white text-primary px-8 py-4 font-semibold text-lg !rounded-button whitespace-nowrap hover:bg-gray-100 transition"
         >
           Start Your Project Today
-        </button>
+        </a>
       </div>
     </section>
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-16 pb-8">
       <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div>
-            <a
-              href="#"
-              class="text-2xl font-['Pacifico'] text-white mb-4 inline-block"
-              >logo</a
-            >
-            <p class="text-gray-400 mb-6">
-              We craft beautiful, functional websites that help businesses grow
-              online. With over 10 years of experience, we're trusted by
-              companies worldwide.
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+          <div class="lg:col-span-2">
+            <div class="flex items-center">
+              <a href="index.html" class="flex items-center space-x-2">
+                <img src="Images/Main_logo.png" alt="LM Logo" class="h-10 w-auto" />
+              </a>
+            </div>
+            <p class="text-gray-400 mb-6 max-w-md">
+            </br>
+              Empowering businesses with innovative digital solutions to drive
+              growth, enhance customer engagement, and maximize ROI in today's
+              competitive marketplace.
             </p>
             <div class="flex space-x-4">
               <a
                 href="#"
-                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
+                title="Facebook"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
               >
                 <i class="ri-facebook-fill"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
               >
                 <i class="ri-twitter-x-fill"></i>
               </a>
               <a
-                href="#"
-                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
+                href="https://www.linkedin.com/in/aadiverma/"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
               >
-                <i class="ri-instagram-fill"></i>
-              </a>
+              <i class="ri-linkedin-fill"></i>
               <a
-                href="#"
-                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition"
+                href="https://www.linkedin.com/company/leadminnow/about"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
               >
                 <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/leadminnow/"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors"
+              >
+                <i class="ri-instagram-fill"></i>
               </a>
             </div>
           </div>
           <div>
-            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 class="text-lg font-semibold mb-4">Services</h3>
             <ul class="space-y-3">
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition"
-                  >Home</a
+                <a
+                  href="Facebook.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Digital Marketing</a
                 >
               </li>
               <li>
                 <a
-                  href="#services"
-                  class="text-gray-400 hover:text-white transition"
-                  >Services</a
+                  href="Facebook.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Meta Ads</a
                 >
               </li>
               <li>
                 <a
-                  href="#portfolio"
-                  class="text-gray-400 hover:text-white transition"
-                  >Portfolio</a
+                  href="ads_making.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Animated Ads</a
                 >
               </li>
               <li>
                 <a
-                  href="#pricing"
-                  class="text-gray-400 hover:text-white transition"
-                  >Pricing</a
+                  href="AI-Chatbot.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >AI Chatbots</a
                 >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition"
+                <a
+                  href="ads_making.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >UI/UX Design</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="AboutUs.html"
+                  class="text-gray-400 hover:text-white transition-colors"
                   >About Us</a
                 >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-white transition"
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Case Studies</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Testimonials</a
+              
+              <li>
+                <a
+                  href="Contact_us.html"
+                  class="text-gray-400 hover:text-white transition-colors"
                   >Contact</a
                 >
               </li>
             </ul>
           </div>
           <div>
-            <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 class="text-lg font-semibold mb-4">Store Information</h3>
             <ul class="space-y-3">
               <li class="flex items-start">
-                <i class="ri-map-pin-line mt-1 mr-3"></i>
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2 mt-0.5"
+                >
+                  <i class="ri-map-pin-line"></i>
+                </div>
                 <span class="text-gray-400"
-                  >123 Web Design Street, San Francisco, CA 94103</span
+                  >123 Demo-1, New York, NY 10001</span
                 >
               </li>
               <li class="flex items-center">
-                <i class="ri-phone-line mr-3"></i>
-                <span class="text-gray-400">(555) 123-4567</span>
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2"
+                >
+                  <i class="ri-phone-line"></i>
+                </div>
+                <span class="text-gray-400">+91 8085247210</span>
               </li>
               <li class="flex items-center">
-                <i class="ri-mail-line mr-3"></i>
-                <span class="text-gray-400">info@webdesignpro.com</span>
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2"
+                >
+                  <i class="ri-mail-line"></i>
+                </div>
+                <span class="text-gray-400">aaditya@leadminnow.com</span>
               </li>
               <li class="flex items-center">
-                <i class="ri-time-line mr-3"></i>
-                <span class="text-gray-400">Mon-Fri: 9AM - 6PM</span>
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-gray-400 mr-2"
+                >
+                  <i class="ri-time-line"></i>
+                </div>
+                <span class="text-gray-400"
+                  >Mon-Fri: 8AM-9PM, Sat: 10AM-4PM</span
+                >
               </li>
             </ul>
-          </div>
-          <div>
-            <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
-            <p class="text-gray-400 mb-4">
-              Subscribe to receive updates, access to exclusive deals, and more.
-            </p>
-            <form class="flex flex-col space-y-3">
-              <input
-                type="email"
-                placeholder="Your email address"
-                class="bg-gray-800 border-none text-white px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm"
-              />
-              <button
-                type="submit"
-                class="bg-primary text-white py-3 font-medium !rounded-button whitespace-nowrap hover:bg-primary/90 transition"
-              >
-                Subscribe
-              </button>
-            </form>
-            <div class="flex items-center mt-6">
-              <div class="flex space-x-2">
-                <i class="ri-visa-fill text-2xl text-gray-400"></i>
-                <i class="ri-mastercard-fill text-2xl text-gray-400"></i>
-                <i class="ri-paypal-fill text-2xl text-gray-400"></i>
-                <i class="ri-apple-fill text-2xl text-gray-400"></i>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  class="w-full px-4 py-2 bg-gray-800 border-none rounded-l text-white text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+                <button
+                  class="bg-primary text-white px-4 py-2 !rounded-r-button whitespace-nowrap font-medium hover:bg-primary/90 transition-colors"
+                >
+                  Subscribe
+                </button>
               </div>
             </div>
           </div>
         </div>
-        <div class="border-t border-gray-800 pt-8">
-          <div class="flex flex-col md:flex-row justify-between items-center">
-            <p class="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2025 WebCraft Pro. All rights reserved.
-            </p>
-            <div class="flex space-x-6">
-              <a
-                href="#"
-                class="text-gray-400 hover:text-white text-sm transition"
-                >Privacy Policy</a
+        <div
+          class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-500 text-sm mb-4 md:mb-0">
+            © 2025 LeadMinnow. All rights reserved.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              href="#"
+              class="text-gray-500 text-sm hover:text-white transition-colors"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-gray-500 text-sm hover:text-white transition-colors"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              class="text-gray-500 text-sm hover:text-white transition-colors"
+              >Cookie Policy</a
+            >
+          </div>
+          <div class="flex items-center mt-4 md:mt-0">
+            <span class="text-gray-500 text-sm mr-4">Payment Methods:</span>
+            <div class="flex space-x-3">
+              <div
+                class="w-8 h-8 flex items-center justify-center text-gray-400"
               >
-              <a
-                href="#"
-                class="text-gray-400 hover:text-white text-sm transition"
-                >Terms of Service</a
+                <i class="ri-visa-fill ri-lg"></i>
+              </div>
+              <div
+                class="w-8 h-8 flex items-center justify-center text-gray-400"
               >
-              <a
-                href="#"
-                class="text-gray-400 hover:text-white text-sm transition"
-                >Cookie Policy</a
+                <i class="ri-mastercard-fill ri-lg"></i>
+              </div>
+              <div
+                class="w-8 h-8 flex items-center justify-center text-gray-400"
               >
+                <i class="ri-paypal-fill ri-lg"></i>
+              </div>
+              <div
+                class="w-8 h-8 flex items-center justify-center text-gray-400"
+              >
+                <i class="ri-apple-fill ri-lg"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -924,6 +904,7 @@
     <div class="fixed bottom-6 right-24 z-50 hidden" id="scroll-top-button">
       <button
         class="bg-white text-gray-700 w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 transition border border-gray-200"
+        title="Scroll to top"
       >
         <i class="ri-arrow-up-line ri-lg"></i>
       </button>
